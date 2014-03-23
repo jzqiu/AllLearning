@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -39,9 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HomeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AL.Component.Data\AL.Component.Data.csproj">
+      <Project>{9bcb9be6-602e-4664-8f48-b6904bc6c863}</Project>
+      <Name>AL.Component.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AL.Component.Tools\AL.Component.Tools.csproj">
       <Project>{22c7678a-e7a4-45ed-9c58-095f8cbe9eb8}</Project>
       <Name>AL.Component.Tools</Name>

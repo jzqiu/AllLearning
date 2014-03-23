@@ -24,5 +24,10 @@ namespace AL.Core.Data
         {
             get { return ALDbContext; }
         }
+
+        public ALUnitOfWorkContext()
+        {
+            ALDbContext = new ALDbContext();
+        }
     }
 }
