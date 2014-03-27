@@ -1,6 +1,9 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
+@section head{
+    @Styles.Render("~/Content/themes/base/css")
+}
 @section featured {
     <section class="featured">
         <div class="content-wrapper">
@@ -43,3 +46,15 @@
         <a href="http://go.microsoft.com/fwlink/?LinkId=245157">Learn more…</a>
     </li>
 </ol>
+<div id="dialog" title="Basic dialog">
+  <p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
+</div>
+
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryui")
+    <script>
+        $(function () {
+            $("#dialog").dialog();
+        });
+    </script>
+}
