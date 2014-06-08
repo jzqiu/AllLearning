@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Express 2012 for Web
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AL.Component.Data", "AL.Component.Data\AL.Component.Data.csproj", "{9BCB9BE6-602E-4664-8F48-B6904BC6C863}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AL.Component.Tools", "AL.Component.Tools\AL.Component.Tools.csproj", "{22C7678A-E7A4-45ED-9C58-095F8CBE9EB8}"
@@ -20,6 +20,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3- Presentation", "3- Presentation", "{B3A6EFA3-E68A-4A7F-B648-B4078FE3F1E0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AL.Site.Web", "AL.Site.Web\AL.Site.Web.csproj", "{CE29CDA3-84CE-4502-8C07-5E58E1865175}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AL.Backstage.Web", "AL.Backstage.Web\AL.Backstage.Web.csproj", "{58D1195D-F500-4055-8725-489CD71A760F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AL.Backstage.Controllers", "AL.Backstage.Controllers\AL.Backstage.Controllers.csproj", "{3ADA9D16-B4C3-4947-A63E-7A1829DA5148}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +59,14 @@ Global
 		{CE29CDA3-84CE-4502-8C07-5E58E1865175}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE29CDA3-84CE-4502-8C07-5E58E1865175}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE29CDA3-84CE-4502-8C07-5E58E1865175}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58D1195D-F500-4055-8725-489CD71A760F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58D1195D-F500-4055-8725-489CD71A760F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58D1195D-F500-4055-8725-489CD71A760F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58D1195D-F500-4055-8725-489CD71A760F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3ADA9D16-B4C3-4947-A63E-7A1829DA5148}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3ADA9D16-B4C3-4947-A63E-7A1829DA5148}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3ADA9D16-B4C3-4947-A63E-7A1829DA5148}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3ADA9D16-B4C3-4947-A63E-7A1829DA5148}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -67,5 +79,7 @@ Global
 		{DEAFD0CB-5701-4085-BB10-057C5B7C0D53} = {23145B8D-C6BB-4DAF-A2D2-F8F60CA90B44}
 		{758D922D-688C-4CC0-BE22-F5A3FD8C0A8F} = {B3A6EFA3-E68A-4A7F-B648-B4078FE3F1E0}
 		{CE29CDA3-84CE-4502-8C07-5E58E1865175} = {B3A6EFA3-E68A-4A7F-B648-B4078FE3F1E0}
+		{58D1195D-F500-4055-8725-489CD71A760F} = {B3A6EFA3-E68A-4A7F-B648-B4078FE3F1E0}
+		{3ADA9D16-B4C3-4947-A63E-7A1829DA5148} = {B3A6EFA3-E68A-4A7F-B648-B4078FE3F1E0}
 	EndGlobalSection
 EndGlobal

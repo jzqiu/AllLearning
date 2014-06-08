@@ -26,6 +26,19 @@ namespace AL.Core
 
         public List<TestTable> Test()
         {
+            //var test = new TestTable()
+            //{
+            //    Name = "Test1",
+            //    Description = "testtest"
+            //};
+            //repository.Insert(test);
+            //var test2 = new TestTable()
+            //{
+            //    Name = "Test2",
+            //    Description = "testtest"
+            //};
+            //unit.RegisterNew<TestTable>(test2);
+            //unit.Commit();
             return repository.Entities.ToList();
         }
     }
