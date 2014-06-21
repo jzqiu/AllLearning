@@ -3,7 +3,7 @@
     <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <meta charset="utf-8" />
-        <title>@ViewBag.Title - 我的 ASP.NET MVC 应用程序</title>
+        <title>@ViewBag.Title - 张家港全民终身学习网</title>
         <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
         <meta name="viewport" content="width=device-width" />
         @Styles.Render("~/Content/css")
@@ -11,38 +11,60 @@
         @RenderSection("head", required: false)
     </head>
     <body>
-        <header>
-            <div class="content-wrapper">
-                <div class="float-left">
-                    <p class="site-title">@Html.ActionLink("将你的徽标放置在此处", "Index", "Home")</p>
+        <div class="content">
+            <!-- 菜单 -->
+            <div class="top_wrapper">
+                <a href="~/Home/Index" class="logo"><img src="@Url.Content("~/Images/index/logo.jpg")" /></a>
+                <div class="functions">
+                    <a class="first" href="#">登录</a>
+                    <a href="#">设为首页</a>
+                    <a href="#">加入收藏</a>
+                    <a href="#">联系我们</a>
+                    <a href="#">忘记密码?</a>
                 </div>
-                <div class="float-right">
-                    <section id="login">
-                        @*Html.Partial("_LoginPartial")*@
-                    </section>
-                    <nav>
-                        <ul id="menu">
-                            <li>@Html.ActionLink("主页", "Index", "Home")</li>
-                            <li>@Html.ActionLink("关于", "About", "Home")</li>
-                            <li>@Html.ActionLink("联系方式", "Contact", "Home")</li>
-                        </ul>
-                    </nav>
-                </div>
+                <ul>
+                    <li class="first">
+                        <span>新闻中心</span>
+                        <div class="menu2"><label class="menu2_start"></label><span>教育动态</span><span>政策文件</span><span>图片新闻</span><span>通知公告</span><label class="menu2_end"></label></div>
+                    </li>
+                    <li>
+                        <span>课程中心</span>
+                        <div class="menu2"><label class="menu2_start"></label><span>热门课程</span><span>最新课程</span><span>精品课程</span><span>全部课程</span><label class="menu2_end"></label></div>
+                    </li>
+                    <li>
+                        <span>成果展示</span>
+                        <div class="menu2"><label class="menu2_start"></label><span>主题教育</span><span>社区活动</span><span>学习型组织建设</span><label class="menu2_end"></label></div>
+                    </li>
+                    <li>
+                        <span>学习地图</span>
+                    </li>
+                    <li>
+                        <span>学习俱乐部</span>
+                        @*<div class="menu2"><label class="menu2_start"></label><span>日志</span><span>相册</span><span>分享</span><span>群组</span><span>投票</span><span>新鲜事</span><label class="menu2_end"></label></div>*@
+                    </li>
+                </ul>
             </div>
-        </header>
-        <div id="body">
-            @RenderSection("featured", required: false)
-            <section class="content-wrapper main-content clear-fix">
-                @RenderBody()
-            </section>
+            @RenderBody()
         </div>
-        <footer>
-            <div class="content-wrapper">
-                <div class="float-left">
-                    <p>&copy; @DateTime.Now.Year - 我的 ASP.NET MVC 应用程序</p>
-                </div>
-            </div>
-        </footer>
+        <!-- 底部 -->
+        <div class="bottom">
+            <ul>
+                <li><a href="#">教育部</a></li>
+                <li><a href="#">江苏教育资源网</a></li>
+                <li><a href="#">张家港教育</a></li>
+                <li><a href="#">浙江社区教育网</a></li>
+                <li><a href="#">上海终身教育</a></li>
+                <li><a href="#">江苏教育</a></li>
+                <li><a href="#">教育在线</a></li>
+                <li><a href="#">新华网</a></li>
+                <li><a href="#">人民网</a></li>
+                <li><a href="#">腾讯教育</a></li>
+                <li><a href="#">苏州教育</a></li>
+                <li><a href="#">江苏学习在线</a></li>
+                <li><a href="#">中国社区教育网</a></li>
+                <li><a href="#">金港热线</a></li>
+            </ul>
+        </div>
 
         @Scripts.Render("~/bundles/jquery")
         @RenderSection("scripts", required: false)

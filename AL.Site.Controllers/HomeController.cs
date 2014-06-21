@@ -12,8 +12,8 @@ namespace AL.Site.Controllers
     {
         public ActionResult Index()
         {
-            var service = new HomeService();
-            var test = service.Test();
+            //var service = new HomeService();
+            //var test = service.Test();
             return View();
         }
 

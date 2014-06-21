@@ -1,60 +1,139 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "首页";
 }
 @section head{
-    @Styles.Render("~/Content/themes/base/css")
+    @*Styles.Render("~/Content/themes/base/css")*@
 }
-@section featured {
-    <section class="featured">
-        <div class="content-wrapper">
-            <hgroup class="title">
-                <h1>@ViewBag.Title.</h1>
-                <h2>@ViewBag.Message</h2>
-            </hgroup>
-            <p>
-                To learn more about ASP.NET MVC visit
-                <a href="http://asp.net/mvc" title="ASP.NET MVC Website">http://asp.net/mvc</a>.
-                The page features <mark>videos, tutorials, and samples</mark> to help you get the most from ASP.NET MVC.
-                If you have any questions about ASP.NET MVC visit
-                <a href="http://forums.asp.net/1146.aspx/1?MVC" title="ASP.NET MVC Forum">our forums</a>.
-            </p>
+
+<!-- 图片墙 -->
+<div class="slide_wrapper">
+    <div class="slide_left"></div>
+    <div class="slide_right"></div>
+    <div class="slide_bottom"></div>
+</div>
+<!-- 内容区域 -->
+<div class="main_wrapper">
+    <div class="main_left">
+        <!-- 新闻 -->
+        <div class="news">
+            <div class="news_title">
+                <span class="tab_title tab_selected">教育动态</span><!--
+                        --><span class="tab_title marginleft1">政策文件</span>
+                <label>News</label>
+                <label class="title_style">新闻中心</label>
+                <a class="more" href="#"></a>
+            </div>
+            <ul class="news_block news_block_show">
+                <li>[教育] <a href="#">新东社区开展健康义诊活动</a> <span>[2014-04-20]</span></li>
+                <li>[教育] <a href="#">新东社区开展健康义诊活动</a> <span>[2014-04-20]</span></li>
+                <li>[教育] <a href="#">新东社区开展健康义诊活动</a> <span>[2014-04-20]</span></li>
+                <li>[教育] <a href="#">新东社区开展健康义诊活动</a> <span>[2014-04-20]</span></li>
+                <li>[教育] <a href="#">新东社区开展健康义诊活动</a> <span>[2014-04-20]</span></li>
+            </ul>
+            <ul class="news_block">
+                <li>[政策] <a href="#">新东社区开展健康义诊活动</a> <span>[2014-04-20]</span></li>
+                <li>[政策] <a href="#">新东社区开展健康义诊活动</a> <span>[2014-04-20]</span></li>
+                <li>[政策] <a href="#">新东社区开展健康义诊活动</a> <span>[2014-04-20]</span></li>
+                <li>[政策] <a href="#">新东社区开展健康义诊活动</a> <span>[2014-04-20]</span></li>
+                <li>[政策] <a href="#">新东社区开展健康义诊活动</a> <span>[2014-04-20]</span></li>
+            </ul>
+            <ul class="news_block">
+                <li>[通知] <a href="#">新东社区开展健康义诊活动</a> <span>[2014-04-20]</span></li>
+                <li>[通知] <a href="#">新东社区开展健康义诊活动</a> <span>[2014-04-20]</span></li>
+                <li>[通知] <a href="#">新东社区开展健康义诊活动</a> <span>[2014-04-20]</span></li>
+                <li>[通知] <a href="#">新东社区开展健康义诊活动</a> <span>[2014-04-20]</span></li>
+                <li>[通知] <a href="#">新东社区开展健康义诊活动</a> <span>[2014-04-20]</span></li>
+            </ul>
         </div>
-    </section>
-}
-<h3>We suggest the following:</h3>
-<ol class="round">
-    <li class="one">
-        <h5>Getting Started</h5>
-        ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-        enables a clean separation of concerns and that gives you full control over markup
-        for enjoyable, agile development. ASP.NET MVC includes many features that enable
-        fast, TDD-friendly development for creating sophisticated applications that use
-        the latest web standards.
-        <a href="http://go.microsoft.com/fwlink/?LinkId=245151">Learn more…</a>
-    </li>
-
-    <li class="two">
-        <h5>Add NuGet packages and jump-start your coding</h5>
-        NuGet makes it easy to install and update free libraries and tools.
-        <a href="http://go.microsoft.com/fwlink/?LinkId=245153">Learn more…</a>
-    </li>
-
-    <li class="three">
-        <h5>Find Web Hosting</h5>
-        You can easily find a web hosting company that offers the right mix of features
-        and price for your applications.
-        <a href="http://go.microsoft.com/fwlink/?LinkId=245157">Learn more…</a>
-    </li>
-</ol>
-<div id="dialog" title="Basic dialog">
-  <p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
+        <!-- 精品课程 -->
+        <div class="excellent_wrapper">
+            <div class="small_wrapper">
+                <ul>
+                    <li>
+                        <img class="small_img" src="~/Images/index/smal_img1.jpg" />
+                        <div class="small_txt">
+                            <p class="title_style">精品课程</p>
+                            <p>Subject Education</p>
+                            <p>健身交谊舞1 谊舞1 谊舞1 </p>
+                            <span class="more"></span>
+                        </div>
+                    </li>
+                    <li>
+                        <img class="small_img" src="~/Images/index/smal_img1.jpg" />
+                        <div class="small_txt">
+                            <p class="title_style">精品课程</p>
+                            <p>Subject Education</p>
+                            <p>健身交谊舞1 谊舞1 谊舞1 </p>
+                            <span class="more"></span>
+                        </div>
+                    </li>
+                    <li>
+                        <img class="small_img" src="~/Images/index/smal_img1.jpg" />
+                        <div class="small_txt">
+                            <p class="title_style">精品课程</p>
+                            <p>Subject Education</p>
+                            <p>健身交谊舞1 谊舞1 谊舞1 </p>
+                            <span class="more"></span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="excellent_btn excellent_btn_left"></div>
+            <div class="excellent_btn excellent_btn_right"></div>
+        </div>
+        <div class="clear"></div>
+        <!-- 课程中心 -->
+        <div class="course_wrapper">
+            <p class="course_title">Results Show <span class="title_style">课程中心</span> <a class="more" href="#"></a></p>
+            <div class="course_box">
+                <a href="#">社会<br />
+                    交往</a><span></span>
+                <a href="#">社会<br />
+                    交往</a><span></span>
+                <a href="#">社会<br />
+                    交往</a><span></span>
+                <a href="#">社会<br />
+                    交往</a><span></span>
+                <a href="#">社会<br />
+                    交往</a><span></span>
+                <a href="#">社会<br />
+                    交往</a>
+            </div>
+        </div>
+    </div>
+    <div class="main_right">
+        <div class="right_title right_title1 right_title_show"><span class="right_num"></span><span>Report</span><span class="title_style"> 通知公告</span></div>
+        <ul>
+            <li><a href="#">新东社区开展健康义诊活动</a></li>
+            <li><a href="#">新东社区开展健康义诊活动</a></li>
+            <li><a href="#">新东社区开展健康义诊活动</a></li>
+            <li><a href="#">新东社区开展健康义诊活动</a></li>
+            <li><a href="#">新东社区开展健康义诊活动</a></li>
+            <li><a href="#">新东社区开展健康义诊活动</a></li>
+        </ul>
+        <div class="right_title"><span class="right_num"></span><span>Electronic journals</span><span class="title_style"> 电子期刊</span></div>
+        <ul>
+            <li><a href="#">新东社区开展健康义诊活动</a></li>
+            <li><a href="#">新东社区开展健康义诊活动</a></li>
+            <li><a href="#">新东社区开展健康义诊活动</a></li>
+            <li><a href="#">新东社区开展健康义诊活动</a></li>
+            <li><a href="#">新东社区开展健康义诊活动</a></li>
+            <li><a href="#">新东社区开展健康义诊活动</a></li>
+        </ul>
+        <div class="right_title"><span class="right_num"></span><span>Report</span><span class="title_style"> 图书馆</span></div>
+        <ul>
+            <li><a href="#">新东社区开展健康义诊活动</a></li>
+            <li><a href="#">新东社区开展健康义诊活动</a></li>
+            <li><a href="#">新东社区开展健康义诊活动</a></li>
+            <li><a href="#">新东社区开展健康义诊活动</a></li>
+            <li><a href="#">新东社区开展健康义诊活动</a></li>
+            <li><a href="#">新东社区开展健康义诊活动</a></li>
+        </ul>
+    </div>
+    <div class="clear"></div>
 </div>
 
+
 @section scripts{
-    @Scripts.Render("~/bundles/jqueryui")
-    <script>
-        $(function () {
-            $("#dialog").dialog();
-        });
-    </script>
+    @*Scripts.Render("~/bundles/jqueryui")*@
 }
