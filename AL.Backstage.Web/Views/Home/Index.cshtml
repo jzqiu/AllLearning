@@ -1,45 +1,101 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    Layout = null;
 }
-@section featured {
-    <section class="featured">
-        <div class="content-wrapper">
-            <hgroup class="title">
-                <h1>@ViewBag.Title.</h1>
-                <h2>@ViewBag.Message</h2>
-            </hgroup>
-            <p>
-                To learn more about ASP.NET MVC visit
-                <a href="http://asp.net/mvc" title="ASP.NET MVC Website">http://asp.net/mvc</a>.
-                The page features <mark>videos, tutorials, and samples</mark> to help you get the most from ASP.NET MVC.
-                If you have any questions about ASP.NET MVC visit
-                <a href="http://forums.asp.net/1146.aspx/1?MVC" title="ASP.NET MVC Forum">our forums</a>.
-            </p>
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - 后台管理系统</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/themes/base/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="top_wrapper">
+        <div class="top_content">
+            <span class="top_left">后台管理系统</span>
+            <span>您好 , <span>XXX</span> | <a href="#">设置</a> | <a href="#">退出</a> </span>
         </div>
-    </section>
-}
-<h3>We suggest the following:</h3>
-<ol class="round">
-    <li class="one">
-        <h5>Getting Started</h5>
-        ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-        enables a clean separation of concerns and that gives you full control over markup
-        for enjoyable, agile development. ASP.NET MVC includes many features that enable
-        fast, TDD-friendly development for creating sophisticated applications that use
-        the latest web standards.
-        <a href="http://go.microsoft.com/fwlink/?LinkId=245151">Learn more…</a>
-    </li>
+    </div>
+    <div class="content">
+        <div class="left">
+            <div class="menu menu_1">Home</div>
+            <div class="menu2_wrapper show">
+                <div class="menu2" data-url="index.html">菜单2</div>
+                <div class="menu2" data-url="login.html">菜单2</div>
+                <div class="menu2" data-url="index.html">菜单2</div>
+            </div>
+            <div class="menu menu_2">Page</div>
+            <div class="menu2_wrapper">
+                <div class="menu2">菜单2</div>
+                <div class="menu2">菜单2</div>
+                <div class="menu2">菜单2</div>
+            </div>
+            <div class="menu menu_3">Posts</div>
+            <div class="menu2_wrapper">
+                <div class="menu2">菜单2</div>
+                <div class="menu2">菜单2</div>
+                <div class="menu2">菜单2</div>
+            </div>
+            <div class="menu menu_4">Media</div>
+            <div class="menu2_wrapper">
+                <div class="menu2">菜单2</div>
+                <div class="menu2">菜单2</div>
+                <div class="menu2">菜单2</div>
+            </div>
+            <div class="menu menu_5">Users</div>
+            <div class="menu2_wrapper">
+                <div class="menu2">菜单2</div>
+                <div class="menu2">菜单2</div>
+                <div class="menu2">菜单2</div>
+            </div>
+            <div id="datepicker"></div>
+        </div>
+        <div class="right">
+            <iframe id="ifr_main" src="" border="0" frameborder="0" framespacing="0" noresize="noresize"></iframe>
+        </div>
+    </div>
 
-    <li class="two">
-        <h5>Add NuGet packages and jump-start your coding</h5>
-        NuGet makes it easy to install and update free libraries and tools.
-        <a href="http://go.microsoft.com/fwlink/?LinkId=245153">Learn more…</a>
-    </li>
-
-    <li class="three">
-        <h5>Find Web Hosting</h5>
-        You can easily find a web hosting company that offers the right mix of features
-        and price for your applications.
-        <a href="http://go.microsoft.com/fwlink/?LinkId=245157">Learn more…</a>
-    </li>
-</ol>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
+    <script type="text/javascript">
+        $.datepicker.regional['zh-CN'] = {
+            closeText: '关闭',
+            prevText: '&#x3C;上月',
+            nextText: '下月&#x3E;',
+            currentText: '今天',
+            monthNames: ['一月', '二月', '三月', '四月', '五月', '六月',
+            '七月', '八月', '九月', '十月', '十一月', '十二月'],
+            monthNamesShort: ['一月', '二月', '三月', '四月', '五月', '六月',
+            '七月', '八月', '九月', '十月', '十一月', '十二月'],
+            dayNames: ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'],
+            dayNamesShort: ['周日', '周一', '周二', '周三', '周四', '周五', '周六'],
+            dayNamesMin: ['日', '一', '二', '三', '四', '五', '六'],
+            weekHeader: '周',
+            dateFormat: 'yy-mm-dd',
+            firstDay: 1,
+            isRTL: false,
+            showMonthAfterYear: true,
+            yearSuffix: '年'
+        };
+        $.datepicker.setDefaults($.datepicker.regional['zh-CN']);
+        $("#datepicker").datepicker();
+        $(".menu").click(function () {
+            var menu2 = $(this).next();
+            if (!menu2.hasClass("menu2_wrapper")) return false;
+            //$(".menu2_wrapper").not(menu2).slideUp(200);
+            menu2.slideToggle(200);
+        });
+        $(".menu2").click(function () {
+            if ($(this).attr("data-url")) {
+                $("#ifr_main").attr("src", $(this).attr("data-url"));
+                $(".menu2").removeClass("selected");
+                $(this).addClass("selected");
+            }
+        });
+    </script>
+</body>
+</html>

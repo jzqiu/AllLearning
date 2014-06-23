@@ -50,6 +50,10 @@
       <Project>{22c7678a-e7a4-45ed-9c58-095f8cbe9eb8}</Project>
       <Name>AL.Component.Tools</Name>
     </ProjectReference>
+    <ProjectReference Include="..\AL.Core.Data\AL.Core.Data.csproj">
+      <Project>{0b7accf4-43f7-4a78-8f73-9159a9496418}</Project>
+      <Name>AL.Core.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AL.Core.Models\AL.Core.Models.csproj">
       <Project>{c942dc0c-47fb-4115-ab2a-229b5b8fba37}</Project>
       <Name>AL.Core.Models</Name>

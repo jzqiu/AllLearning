@@ -40,6 +40,8 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,16 +49,49 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ALDbContext.cs" />
+    <Compile Include="ALModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ALModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ALModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ALModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ALModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ALModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="ALUnitOfWorkContext.cs" />
-    <Compile Include="DatabaseInitializer.cs" />
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SampleData.cs" />
+    <Compile Include="TestTable.cs">
+      <DependentUpon>ALModel.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
+    <EntityDeploy Include="ALModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ALModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="ALModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ALModel.edmx</DependentUpon>
+      <LastGenOutput>ALModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="ALModel.edmx.diagram">
+      <DependentUpon>ALModel.edmx</DependentUpon>
+    </None>
+    <None Include="ALModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ALModel.edmx</DependentUpon>
+      <LastGenOutput>ALModel.cs</LastGenOutput>
+    </None>
+    <None Include="App.Config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AL.Component.Data\AL.Component.Data.csproj">
@@ -71,6 +106,9 @@
       <Project>{c942dc0c-47fb-4115-ab2a-229b5b8fba37}</Project>
       <Name>AL.Core.Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -13,7 +13,7 @@ a:hover { color:black; text-decoration:underline; }
 .functions a:hover { text-decoration: underline; }
 .top_wrapper .first { border-left-width: 0; }
 .top_wrapper ul { width:752px; position: absolute; top: 50px; right: 69px; color: #766b65; font-weight: bold; font-size: 14px; }
-.top_wrapper ul li { padding: 0 15px; border-right: solid 2px #766b65; cursor: pointer; float:left; }
+.top_wrapper ul li {padding: 0 15px; border-right: solid 2px #766b65; cursor: pointer; float:left; }
 .top_wrapper ul li span:hover { color: #1647a1; }
 .top_wrapper ul li.first { border-left: solid 2px #766b65; }
 .menu2 { display: none; height: 20px; line-height: 20px; padding: 0 5px; position: absolute; top: 30px; left: 0px; font-size: 12px; color: white; background: url('../Images/index/menu2_bg.jpg') repeat-x 0px -48px; }
@@ -75,7 +75,7 @@ a:hover { color:black; text-decoration:underline; }
 .right_title_show { background-position:0px -24px; }
 .right_title1 { margin-top:0; }
 .right_num { float:left; }
-.main_right ul { padding-left:25px; display:none; }
+.main_right ul {height:145px; padding-left:25px; display:none; }
 .main_right ul li { line-height:24px; list-style-type:square; margin:auto;}
 
 /* 底部 */
@@ -84,20 +84,3 @@ a:hover { color:black; text-decoration:underline; }
 .bottom ul li { width:105px; float:left; line-height:25px; list-style-type:disc; margin-left:15px; }
 .bottom ul li a {  color:#968b87;}
 .bottom ul li a:hover { color:#676767;}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

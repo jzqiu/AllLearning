@@ -1,50 +1,50 @@
-﻿@model AL.Backstage.Web.Models.LoginModel
-
-@{
-    ViewBag.Title = "登录";
+﻿@{
+    Layout = null;
 }
 
-<hgroup class="title">
-    <h1>@ViewBag.Title.</h1>
-</hgroup>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>登录 - 后台管理系统</title>
+    <style type="text/css">
+        * { margin: 0; padding: 0; border: 0; list-style: none; text-decoration: none; }
+        body { font: 12px arial,\5b8b\4f53; color: #2b2b2b; }        
+        /*html, body { background:url('../Images/login/body_bg.jpg'); }*/
+        .content { width:100%; background:url('../Images/login/login_right.jpg') repeat-x left top;  }
+        .box { width:980px; height:512px; background:url('../Images/login/login_bg.jpg') no-repeat center center; margin:0 auto; position:relative;}
+        #user_name ,#user_pwd { width:90px; height:17px; line-height:17px; padding:0 10px; position:absolute; top:254px; left:493px; background-color:transparent; border:0;}
+        #user_pwd {top:289px; }
+        #btn_submit { display:none; }
+        .but_submit {width:56px; height:22px;position:absolute; top:326px; left:493px; cursor:pointer; }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="box">
+            <input id="user_name" type="text" maxlength="20" />
+            <input id="user_pwd" type="password" maxlength="20" />
+            <input id="btn_submit" type="submit" />
+            <div class="but_submit"></div>
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    <script type="text/javascript">
+        $(".but_submit,#but_submit").click(function () {
+            if (!$("#user_name").val().replace(/\s/g, "")) {
+                alert("请输入用户名!");
+                $("#user_name").val("");
+                $("#user_name").focus();
+                return false;
+            }
+            if (!$("#user_pwd").val().replace(/\s/g, "")) {
+                alert("请输入密码!");
+                $("#user_pwd").val("");
+                $("#user_pwd").focus();
+                return false;
+            }
+        });
+    </script>
+</body>
+</html>
 
-<section id="loginForm">
-<h2>使用本地帐户登录。</h2>
-@using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl })) {
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary(true)
-
-    <fieldset>
-        <legend>“登录”表单</legend>
-        <ol>
-            <li>
-                @Html.LabelFor(m => m.UserName)
-                @Html.TextBoxFor(m => m.UserName)
-                @Html.ValidationMessageFor(m => m.UserName)
-            </li>
-            <li>
-                @Html.LabelFor(m => m.Password)
-                @Html.PasswordFor(m => m.Password)
-                @Html.ValidationMessageFor(m => m.Password)
-            </li>
-            <li>
-                @Html.CheckBoxFor(m => m.RememberMe)
-                @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
-            </li>
-        </ol>
-        <input type="submit" value="登录" />
-    </fieldset>
-    <p>
-        @Html.ActionLink("注册", "Register") 如果你没有帐户。
-    </p>
-}
-</section>
-
-<section class="social" id="socialLoginForm">
-    <h2>使用其他服务登录。</h2>
-    @Html.Action("ExternalLoginsList", new { ReturnUrl = ViewBag.ReturnUrl })
-</section>
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
