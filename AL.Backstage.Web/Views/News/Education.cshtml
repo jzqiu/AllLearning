@@ -1,6 +1,11 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@section head{
+    <link href="@Url.Content("~/Content/umeditor/css/umeditor.min.css")" rel="stylesheet" />
+    <script type="text/javascript" src="@Url.Content("~/Scripts/umeditor.min.js")"></script>
+    @Scripts.Render("~/bundles/umeditor")
+}
 
 <div id="ePanel" class="easyui-panel" title="教育动态" style="padding:10px;">
     <table>
@@ -32,6 +37,10 @@
         <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editUser()">修改教育动态</a>
         <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="destroyUser()">删除教育动态</a>
     </div>
+
+    <script type="text/plain" id="myEditor" style="width:700px;height:240px;">
+    
+    </script>
 </div>
 
 @section scripts{
@@ -39,5 +48,7 @@
         function doSearch(value){
             alert('You input: ' + value);
         }
+
+        var um = UM.getEditor('myEditor');
     </script>
 }

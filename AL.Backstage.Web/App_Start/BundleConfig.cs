@@ -14,6 +14,10 @@ namespace AL.Backstage.Web
             bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
                         "~/Scripts/jquery-ui-{version}.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/umeditor").Include(
+                        "~/Scripts/umeditor.config.js",
+                        "~/Scripts/lang/zh-cn/zh-cn.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.unobtrusive*",
                         "~/Scripts/jquery.validate*"));

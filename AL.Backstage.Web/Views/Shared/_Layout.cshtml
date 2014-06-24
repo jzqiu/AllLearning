@@ -9,6 +9,7 @@
         @Scripts.Render("~/bundles/jquery")
         <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.easyui.min.js")"></script>
         <script type="text/javascript" src="@Url.Content("~/Scripts/easyui-lang-zh_CN.js")"></script>
+        @RenderSection("head", required: false)
     </head>
     <body>
         <div id="body">
