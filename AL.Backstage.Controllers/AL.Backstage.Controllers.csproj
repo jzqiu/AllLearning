@@ -44,6 +44,7 @@
     <Compile Include="AccountController.cs" />
     <Compile Include="BaseController.cs" />
     <Compile Include="HomeController.cs" />
+    <Compile Include="NewsController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

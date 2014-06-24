@@ -1,47 +1,50 @@
 ﻿<!DOCTYPE html>
 <html lang="zh">
     <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <meta charset="utf-8" />
-        <title>@ViewBag.Title - 我的 ASP.NET MVC 应用程序</title>
-        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
         <meta name="viewport" content="width=device-width" />
         @Styles.Render("~/Content/css")
-        @Scripts.Render("~/bundles/modernizr")
+        @Styles.Render("~/Content/css/easyui")
+        @Scripts.Render("~/bundles/jquery")
+        <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.easyui.min.js")"></script>
+        <script type="text/javascript" src="@Url.Content("~/Scripts/easyui-lang-zh_CN.js")"></script>
     </head>
     <body>
-        <header>
-            <div class="content-wrapper">
-                <div class="float-left">
-                    <p class="site-title">@Html.ActionLink("将你的徽标放置在此处", "Index", "Home")</p>
-                </div>
-                <div class="float-right">
-                    
-                    <nav>
-                        <ul id="menu">
-                            <li>@Html.ActionLink("主页", "Index", "Home")</li>
-                            <li>@Html.ActionLink("关于", "About", "Home")</li>
-                            <li>@Html.ActionLink("联系方式", "Contact", "Home")</li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </header>
         <div id="body">
-            @RenderSection("featured", required: false)
-            <section class="content-wrapper main-content clear-fix">
-                @RenderBody()
-            </section>
+            @RenderBody()
         </div>
-        <footer>
-            <div class="content-wrapper">
-                <div class="float-left">
-                    <p>&copy; @DateTime.Now.Year - 我的 ASP.NET MVC 应用程序</p>
-                </div>
-            </div>
-        </footer>
+        <script type="text/javascript">
+            var winWidth = 0;
+            var winHeight = 0;
+            function findDimensions() {
+                //获取窗口宽度
+                if (window.innerWidth)
+                    winWidth = window.innerWidth;
+                else if ((document.body) && (document.body.clientWidth))
+                    winWidth = document.body.clientWidth;
 
-        @Scripts.Render("~/bundles/jquery")
+                //获取窗口高度
+                if (window.innerHeight)
+                    winHeight = window.innerHeight;
+                else if ((document.body) && (document.body.clientHeight))
+                    winHeight = document.body.clientHeight;
+                //通过深入Document内部对body进行检测，获取窗口大小
+                if (document.documentElement && document.documentElement.clientHeight && document.documentElement.clientWidth) {
+                    winHeight = document.documentElement.clientHeight;
+                    winWidth = document.documentElement.clientWidth;
+                }
+            }
+            function setPanel() {
+                findDimensions();
+                $('#ePanel').panel({
+                    width: winWidth,
+                    height: winHeight
+                });
+            }
+            setPanel();
+            window.onresize = setPanel;
+        </script>
         @RenderSection("scripts", required: false)
     </body>
 </html>

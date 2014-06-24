@@ -1,0 +1,43 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="ePanel" class="easyui-panel" title="教育动态" style="padding:10px;">
+    <table>
+        <tr>
+            <td>教育动态标题：</td>
+            <td><input class="easyui-searchbox" data-options="searcher:doSearch" style="width:300px"/></td>
+        </tr>
+    </table>
+    <table class="easyui-datagrid" toolbar="#toolbar" pagination="true"
+            rownumbers="true" fitColumns="true" singleSelect="true">
+        <thead>
+            <tr>
+                <th field="Code" width="350">教育动态标题</th>
+                <th field="Name" width="100">发布人</th>
+                <th field="Price" width="120">发布时间</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>001</td><td>name1</td><td>2323</td>
+            </tr>
+            <tr>
+                <td>002</td><td>name2</td><td>4612</td>
+            </tr>
+        </tbody>
+    </table>
+    <div id="toolbar">
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="newUser()">发布教育动态</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editUser()">修改教育动态</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="destroyUser()">删除教育动态</a>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        function doSearch(value){
+            alert('You input: ' + value);
+        }
+    </script>
+}
