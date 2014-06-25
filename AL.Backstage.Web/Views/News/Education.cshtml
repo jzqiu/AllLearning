@@ -18,70 +18,92 @@
             rownumbers="true" fitColumns="true" singleSelect="true">
         <thead>
             <tr>
-                <th field="Code" width="350">教育动态标题</th>
+                <th field="title" width="350">教育动态标题</th>
                 <th field="Name" width="100">发布人</th>
                 <th field="Price" width="120">发布时间</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>001</td><td>name1</td><td>2323</td>
+                <td>关于公布“张家港市社区教育讲师团师资库”的通知</td><td>编辑甲</td><td>2014-06-25</td>
             </tr>
             <tr>
-                <td>002</td><td>name2</td><td>4612</td>
+                <td>2014年张家港市全民终身学习活动周</td><td>编辑乙</td><td>2014-06-25</td>
             </tr>
         </tbody>
     </table>
     <div id="toolbar">
-        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="newUser()">发布教育动态</a>
-        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editUser()">修改教育动态</a>
-        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="destroyUser()">删除教育动态</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="add()">发布教育动态</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="edit()">修改教育动态</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="destroy()">删除教育动态</a>
     </div>
-    </div>
-
-    <div class="easyui-panel" title="New Topic" style="width:400px">
-        <div style="padding:10px 60px 20px 60px">
-        <form id="ff" method="post">
+    </div>    
+    <div id="edit" style="display:none">
+        <form id="form" method="post">
             <table cellpadding="5">
                 <tr>
-                    <td>Name:</td>
-                    <td><input class="easyui-validatebox" type="text" name="name" data-options="required:true"></input></td>
+                    <td>标题：</td>
+                    <td><input class="easyui-validatebox" type="text" name="title" data-options="required:true" style="width:500px;"></input></td>
                 </tr>
                 <tr>
-                    <td>Email:</td>
-                    <td><input class="easyui-validatebox" type="text" name="email" data-options="required:true,validType:'email'"></input></td>
-                </tr>
-                <tr>
-                    <td>Subject:</td>
-                    <td><input class="easyui-validatebox" type="text" name="subject" data-options="required:true"></input></td>
-                </tr>
-                <tr>
-                    <td>Message:</td>
-                    <td><input name="message"></input></td>
-                </tr>
-                <tr>
-                    <td>Language:</td>
-                    <td>
-                        <select class="easyui-combobox" name="language"><option value="ar">Arabic</option><option value="bg">Bulgarian</option><option value="ca">Catalan</option><option value="zh-cht">Chinese Traditional</option><option value="cs">Czech</option><option value="da">Danish</option><option value="nl">Dutch</option><option value="en" selected="selected">English</option><option value="et">Estonian</option><option value="fi">Finnish</option><option value="fr">French</option><option value="de">German</option><option value="el">Greek</option><option value="ht">Haitian Creole</option><option value="he">Hebrew</option><option value="hi">Hindi</option><option value="mww">Hmong Daw</option><option value="hu">Hungarian</option><option value="id">Indonesian</option><option value="it">Italian</option><option value="ja">Japanese</option><option value="ko">Korean</option><option value="lv">Latvian</option><option value="lt">Lithuanian</option><option value="no">Norwegian</option><option value="fa">Persian</option><option value="pl">Polish</option><option value="pt">Portuguese</option><option value="ro">Romanian</option><option value="ru">Russian</option><option value="sk">Slovak</option><option value="sl">Slovenian</option><option value="es">Spanish</option><option value="sv">Swedish</option><option value="th">Thai</option><option value="tr">Turkish</option><option value="uk">Ukrainian</option><option value="vi">Vietnamese</option></select>
-                    </td>
+                    <td>内容：</td>
+                    <td><script type="text/plain" id="myEditor" style="width:600px;height:240px;"></script></td>
                 </tr>
             </table>
         </form>
         <div style="text-align:center;padding:5px">
-            <a href="javascript:void(0)" class="easyui-linkbutton" onclick="submitForm()">Submit</a>
-            <a href="javascript:void(0)" class="easyui-linkbutton" onclick="clearForm()">Clear</a>
-        </div>
+            <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" onclick="save()">保存</a>
+            <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="cancel()">取消</a>
         </div>
     </div>
-        @*<script type="text/plain" id="myEditor" style="width:700px;height:240px;">
     
-    </script>*@
 </div>
 
 @section scripts{
     <script>
+        var url;
         function doSearch(value){
-            alert('You input: ' + value);
+            
+        }
+        function add() {
+            $("#form").form("clear");
+            $("#list").hide();
+            $("#edit").show();
+        }
+        function edit() {
+            var row = $('#dg').datagrid('getSelected');
+            if (row) {
+                $('#form').form('load', row);
+                $("#list").hide();
+                $("#edit").show();
+            } else {
+                $.messager.alert('提示', '请选择要修改的教育动态!');
+            }
+        }
+        function destroy() {
+            var row = $('#dg').datagrid('getSelected');
+            if (row) {
+                $.messager.confirm('确认', '确认删除选中的教育动态?', function (r) {
+                    if (r) {
+                        $.post('destroy_user.php', { id: row.id }, function (result) {
+                            if (result.success) {
+                                $('#dg').datagrid('reload');    // reload the user data
+                            } else {
+                                $.messager.show({    // show error message
+                                    title: 'Error',
+                                    msg: result.errorMsg
+                                });
+                            }
+                        }, 'json');
+                    }
+                });
+            } else {
+                $.messager.alert('提示', '请选择要删除的教育动态!');
+            }
+        }
+        function cancel() {
+            $("#edit").hide();
+            $("#list").show();
         }
 
         var um = UM.getEditor('myEditor');
