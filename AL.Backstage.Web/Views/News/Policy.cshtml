@@ -1,0 +1,115 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+    @Styles.Render("~/Content/css/umeditor")
+    @Scripts.Render("~/bundles/umeditor")
+}
+
+<div id="ePanel" class="easyui-panel" title="政策文件" style="padding:10px;">
+    <div id="list">
+    <table>
+        <tr>
+            <td>政策文件标题：</td>
+            <td><input class="easyui-searchbox" data-options="searcher:doSearch" style="width:300px"/></td>
+        </tr>
+    </table>
+    <table id="dg" class="easyui-datagrid" toolbar="#toolbar" pagination="true"
+            rownumbers="true" fitColumns="true" singleSelect="true">
+        <thead>
+            <tr>
+                <th field="title" width="350">政策文件标题</th>
+                <th field="author" width="100">作者</th>
+                <th field="Price" width="120">发布时间</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>关于对五个国家级实验项目中期督查</td><td>市社区培训学院</td><td>2014-06-25</td>
+            </tr>
+            <tr>
+                <td>关于下发《2014年苏州市社区教育工作要点》的函</td><td>苏州市教育局民社处</td><td>2014-04-01</td>
+            </tr>
+        </tbody>
+    </table>
+    <div id="toolbar">
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="add()">发布政策文件</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="edit()">修改政策文件</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="destroy()">删除政策文件</a>
+    </div>
+    </div>    
+    <div id="edit" style="display:none">
+        <form id="form" method="post">
+            <table cellpadding="5">
+                <tr>
+                    <td>标题：</td>
+                    <td><input class="easyui-validatebox" type="text" name="title" data-options="required:true" style="width:500px;"></input></td>
+                </tr>
+                <tr>
+                    <td>作者：</td>
+                    <td><input class="easyui-validatebox" type="text" name="author" data-options="required:true" style="width:500px;"></input></td>
+                </tr>
+                <tr>
+                    <td>内容：</td>
+                    <td><script type="text/plain" id="myEditor" style="width:600px;height:240px;"></script></td>
+                </tr>
+            </table>
+        </form>
+        <div style="text-align:center;padding:5px">
+            <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" onclick="save()">保存</a>
+            <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="cancel()">取消</a>
+        </div>
+    </div>
+    
+</div>
+
+@section scripts{
+    <script>
+        var url;
+        function doSearch(value){
+            
+        }
+        function add() {
+            $("#form").form("clear");
+            $("#list").hide();
+            $("#edit").show();
+        }
+        function edit() {
+            var row = $('#dg').datagrid('getSelected');
+            if (row) {
+                $('#form').form('load', row);
+                $("#list").hide();
+                $("#edit").show();
+            } else {
+                $.messager.alert('提示', '请选择要修改的政策文件!');
+            }
+        }
+        function destroy() {
+            var row = $('#dg').datagrid('getSelected');
+            if (row) {
+                $.messager.confirm('确认', '确认删除选中的政策文件?', function (r) {
+                    if (r) {
+                        $.post('destroy_user.php', { id: row.id }, function (result) {
+                            if (result.success) {
+                                $('#dg').datagrid('reload');    // reload the user data
+                            } else {
+                                $.messager.show({    // show error message
+                                    title: 'Error',
+                                    msg: result.errorMsg
+                                });
+                            }
+                        }, 'json');
+                    }
+                });
+            } else {
+                $.messager.alert('提示', '请选择要删除的政策文件!');
+            }
+        }
+        function cancel() {
+            $("#edit").hide();
+            $("#list").show();
+        }
+
+        var um = UM.getEditor('myEditor');
+    </script>
+}
