@@ -235,7 +235,7 @@
     <Content Include="Content\themes\icons\sum.png" />
     <Content Include="Content\themes\icons\tip.png" />
     <Content Include="Content\themes\icons\undo.png" />
-    <Content Include="Content\umeditor\css\umeditor.min.css" />
+    <Content Include="Content\umeditor\css\umeditor.css" />
     <Content Include="Content\umeditor\images\caret.png" />
     <Content Include="Content\umeditor\images\close.png" />
     <Content Include="Content\umeditor\images\icons.gif" />
@@ -345,7 +345,7 @@
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-ui-1.8.24.js" />
     <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
-    <Content Include="Scripts\jquery.easyui.min.js" />
+    <Content Include="Scripts\jquery.easyui.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
@@ -362,7 +362,7 @@
     <Content Include="Scripts\lang\zh-cn\zh-cn.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\umeditor.config.js" />
-    <Content Include="Scripts\umeditor.min.js" />
+    <Content Include="Scripts\umeditor.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
