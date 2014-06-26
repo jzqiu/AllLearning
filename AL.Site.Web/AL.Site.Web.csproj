@@ -262,6 +262,15 @@
     <Content Include="Images\index\small_slide_icon.png" />
     <Content Include="Images\index\smal_img1.jpg" />
     <Content Include="Images\index\tab_bg.jpg" />
+    <Content Include="Images\login\bottom_btn.jpg" />
+    <Content Include="Images\login\btn.jpg" />
+    <Content Include="Images\login\left_bg.jpg" />
+    <Content Include="Images\login\login_left_img.jpg" />
+    <Content Include="Images\login\login_top.jpg" />
+    <Content Include="Images\login\menu_bg.jpg" />
+    <Content Include="Images\login\registration.jpg" />
+    <Content Include="Images\login\replacement.jpg" />
+    <Content Include="Images\login\top.jpg" />
     <Content Include="Scripts\index.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
@@ -288,6 +297,7 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
+    <Content Include="Views\Account\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
