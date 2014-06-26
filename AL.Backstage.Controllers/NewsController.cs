@@ -19,6 +19,11 @@ namespace AL.Backstage.Controllers
             return View();
         }
 
+        public ActionResult NImage()
+        {
+            return View();
+        }
+
         [HttpPost]
         [ValidateInput(false)]
         public JsonResult Submit(FormCollection form)

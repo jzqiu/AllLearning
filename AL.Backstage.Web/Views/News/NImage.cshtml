@@ -1,0 +1,64 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+    @Styles.Render("~/Content/css/umeditor")
+    @Scripts.Render("~/bundles/umeditor")
+}
+
+<div id="ePanel" class="easyui-panel" title="图片新闻" style="padding:10px;">
+    <div id="list">
+    <table>
+        <tr>
+            <td>图片新闻标题：</td>
+            <td><input class="easyui-searchbox" data-options="searcher:doSearch" style="width:300px"/></td>
+        </tr>
+    </table>
+    <table id="dg" class="easyui-datagrid" toolbar="#toolbar" pagination="true"
+            rownumbers="true" fitColumns="true" singleSelect="true">
+        <thead>
+            <tr>
+                <th field="title" width="350">图片新闻标题</th>
+                <th field="Name" width="100">发布人</th>
+                <th field="Price" width="120">发布时间</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>关于公布“张家港市社区教育讲师团师资库”的通知</td><td>编辑甲</td><td>2014-06-25</td>
+            </tr>
+            <tr>
+                <td>2014年张家港市全民终身学习活动周</td><td>编辑乙</td><td>2014-06-25</td>
+            </tr>
+        </tbody>
+    </table>
+    <div id="toolbar">
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="add()">发布图片新闻</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="edit()">修改图片新闻</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="destroy()">删除图片新闻</a>
+    </div>
+    </div>    
+    <div id="edit" style="display:none">
+        <form id="form" method="post">
+            <table cellpadding="5">
+                <tr>
+                    <td>标题：</td>
+                    <td><input class="easyui-validatebox" type="text" name="title" data-options="required:true" style="width:500px;"></input></td>
+                </tr>
+                <tr>
+                    <td>内容：</td>
+                    <td><script type="text/plain" id="editor" style="width:600px;height:240px;"></script></td>
+                </tr>
+            </table>
+        </form>
+        <div style="text-align:center;padding:5px">
+            <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" onclick="save()">提交</a>
+            <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="cancel()">取消</a>
+        </div>
+    </div>
+    
+</div>
+
+@section scripts{
+    <script type="text/javascript" src="@Url.Content("~/Scripts/backstage.js")"></script>
+}
