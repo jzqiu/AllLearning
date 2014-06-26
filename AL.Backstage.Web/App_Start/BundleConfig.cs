@@ -15,9 +15,9 @@ namespace AL.Backstage.Web
                         "~/Scripts/jquery-ui-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/umeditor").Include(
-                        "~/Scripts/umeditor.js",
-                        "~/Scripts/umeditor.config.js",
-                        "~/Scripts/lang/zh-cn/zh-cn.js"));
+                        "~/Content/umeditor/umeditor.js",
+                        "~/Content/umeditor/umeditor.config.js",
+                        "~/Content/umeditor/lang/zh-cn/zh-cn.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.unobtrusive*",
@@ -34,7 +34,8 @@ namespace AL.Backstage.Web
 
             bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/site.css"));
 
-            bundles.Add(new StyleBundle("~/Content/css/umeditor").Include("~/Content/umeditor/css/umeditor.css"));
+            bundles.Add(new StyleBundle("~/Content/css/umeditor").Include(
+                "~/Content/umeditor/themes/default/css/umeditor.css"));
 
             bundles.Add(new StyleBundle("~/Content/css/easyui").Include(
                 "~/Content/themes/gray/easyui.css",
