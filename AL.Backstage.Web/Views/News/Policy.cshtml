@@ -51,7 +51,7 @@
                 </tr>
                 <tr>
                     <td>内容：</td>
-                    <td><script type="text/plain" id="myEditor" style="width:600px;height:240px;"></script></td>
+                    <td><script type="text/plain" id="editor" style="width:600px;height:240px;"></script></td>
                 </tr>
             </table>
         </form>
@@ -64,52 +64,5 @@
 </div>
 
 @section scripts{
-    <script>
-        var url;
-        function doSearch(value){
-            
-        }
-        function add() {
-            $("#form").form("clear");
-            $("#list").hide();
-            $("#edit").show();
-        }
-        function edit() {
-            var row = $('#dg').datagrid('getSelected');
-            if (row) {
-                $('#form').form('load', row);
-                $("#list").hide();
-                $("#edit").show();
-            } else {
-                $.messager.alert('提示', '请选择要修改的政策文件!');
-            }
-        }
-        function destroy() {
-            var row = $('#dg').datagrid('getSelected');
-            if (row) {
-                $.messager.confirm('确认', '确认删除选中的政策文件?', function (r) {
-                    if (r) {
-                        $.post('destroy_user.php', { id: row.id }, function (result) {
-                            if (result.success) {
-                                $('#dg').datagrid('reload');    // reload the user data
-                            } else {
-                                $.messager.show({    // show error message
-                                    title: 'Error',
-                                    msg: result.errorMsg
-                                });
-                            }
-                        }, 'json');
-                    }
-                });
-            } else {
-                $.messager.alert('提示', '请选择要删除的政策文件!');
-            }
-        }
-        function cancel() {
-            $("#edit").hide();
-            $("#list").show();
-        }
-
-        var um = UM.getEditor('myEditor');
-    </script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/backstage.js")"></script>
 }

@@ -19,10 +19,12 @@ namespace AL.Backstage.Controllers
             return View();
         }
 
-        //[ValidateInput(false)]
-        //public JsonResult Submit(FormCollection form)
-        //{
-        //    var content = form["editor"];
-        //}
+        [HttpPost]
+        [ValidateInput(false)]
+        public JsonResult Submit(FormCollection form)
+        {
+            var content = form["editorValue"];
+            return Json(new { status = 200 });
+        }
     }
 }

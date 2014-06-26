@@ -394,6 +394,7 @@
     <Content Include="Images\login\body_bg.jpg" />
     <Content Include="Images\login\login_bg.jpg" />
     <Content Include="Images\login\login_right.jpg" />
+    <Content Include="Scripts\backstage.js" />
     <Content Include="Scripts\dialogs\emotion\emotion.css" />
     <Content Include="Scripts\dialogs\emotion\emotion.js" />
     <Content Include="Scripts\dialogs\emotion\images\0.gif" />
