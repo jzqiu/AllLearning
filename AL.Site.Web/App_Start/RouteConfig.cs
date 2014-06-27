@@ -17,6 +17,14 @@ namespace AL.Site.Web
                 "index",
                 "index.html", 
                 new { controller = "Home", action = "Index", id = UrlParameter.Optional });
+            routes.MapRoute(
+                "login",
+                "login.html",
+                new { controller = "Account", action = "Login", id = UrlParameter.Optional });
+            routes.MapRoute(
+                "map",
+                "map.html",
+                new { controller = "Home", action = "Map", id = UrlParameter.Optional });
 
             routes.MapRoute(
                 name: "Default",
