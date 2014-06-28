@@ -466,6 +466,10 @@
     <Content Include="Views\News\Education.cshtml" />
     <Content Include="Views\News\Policy.cshtml" />
     <Content Include="Views\News\NImage.cshtml" />
+    <Content Include="Views\News\Report.cshtml" />
+    <Content Include="Views\Course\Courseware.cshtml" />
+    <Content Include="Views\Course\Index.cshtml" />
+    <Content Include="Views\Achievement\Theme.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

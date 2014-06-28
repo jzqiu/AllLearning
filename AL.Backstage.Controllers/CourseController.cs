@@ -11,6 +11,16 @@ namespace AL.Backstage.Controllers
 {
     public class CourseController:BaseController
     {
+        public ActionResult Index()
+        {
+            return View();
+        }
+
+        public ActionResult Courseware()
+        {
+            return View();
+        }
+
         //<form action="/home/uploadfiles" method="post" enctype="multipart/form-data">
         //    <label for="file">Filename:</label>
         //    <input type="file" name="file" id="file" />

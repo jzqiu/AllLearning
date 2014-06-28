@@ -1,0 +1,94 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+    @Styles.Render("~/Content/css/umeditor")
+    @Scripts.Render("~/bundles/umeditor")
+}
+
+<div id="ePanel" class="easyui-panel" title="培训课程" style="padding:10px;">
+    <div id="list">
+    <table>
+        <tr>
+            <td>课程名称：</td>
+            <td><input class="easyui-searchbox" data-options="searcher:doSearch" style="width:300px"/></td>
+        </tr>
+    </table>
+    <table id="dg" class="easyui-datagrid" toolbar="#toolbar" pagination="true"
+            rownumbers="true" fitColumns="true" singleSelect="true">
+        <thead>
+            <tr>
+                <th field="title" width="350">课程名称</th>
+                <th field="Name" width="100">课程分类</th>
+                <th field="Price" width="120">发布时间</th>
+                <th field="status" width="120">点击量</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>健康之路之教育的烦恼——打？不打？</td><td>父母课堂</td><td>2011-06-25</td><td>13794</td>
+            </tr>
+            <tr>
+                <td>小不点学唱歌之老师您早 </td><td>小不点学唱歌</td><td>2011-06-25</td><td>2211</td>
+            </tr>
+        </tbody>
+    </table>
+    <div id="toolbar">
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="add()">发布培训课程</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="edit()">修改培训课程</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="destroy()">删除培训课程</a>
+    </div>
+    </div>    
+    <div id="edit" style="display:none">
+        <form id="form" method="post">
+            <table>
+                <tr>
+                    <td>名　称：</td>
+                    <td colspan="3"><input class="easyui-validatebox" type="text" name="title" data-options="required:true" style="width:500px;"></input></td>
+                </tr>
+                <tr>
+                    <td>演讲人：</td>
+                    <td><select class="easyui-combobox" name="state" style="width:165px;" data-options="required:true">
+                            <option>旷雪梅</option>
+                            <option>柳传志</option>
+                        </select></td>
+                    <td>分类：</td>
+                    <td><input class="easyui-combotree" data-options="required:true" style="width:180px;"></td>
+                </tr>
+                <tr>
+                    <td>课　件：</td>
+                    <td colspan="3"><input type="file" style="width:500px;" /></td>
+                </tr>
+                <tr>
+                    <td>描　述：</td>
+                    <td colspan="3"><script type="text/plain" id="editor" style="width:600px;height:150px;"></script></td>
+                </tr>
+                <tr>
+                    <td>课　时：</td>
+                    <td><input class="easyui-numberbox" precision="1" value="1.0" data-options="required:true"></input></td>
+                    <td>学分：</td>
+                    <td><input class="easyui-numberbox" precision="1" value="1.0" data-options="required:true"></input></td>
+                </tr>
+                <tr>
+                    <td>时　长：</td>
+                    <td><input class="easyui-numberbox" data-options="required:true"></input>分钟</td>
+                    <td>精品课程：</td>
+                    <td><input type="checkbox" />是</td>
+                </tr>
+                <tr>
+                    <td>封面图：</td>
+                    <td colspan="3"><input type="file" style="width:500px;" /></td>
+                </tr>
+            </table>
+        </form>
+        <div style="text-align:center;padding:5px">
+            <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" onclick="save()">提交</a>
+            <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="cancel()">取消</a>
+        </div>
+    </div>
+    
+</div>
+
+@section scripts{
+    <script type="text/javascript" src="@Url.Content("~/Scripts/backstage.js")"></script>
+}

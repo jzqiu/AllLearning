@@ -6,11 +6,11 @@
     @Scripts.Render("~/bundles/umeditor")
 }
 
-<div id="ePanel" class="easyui-panel" title="教育动态" style="padding:10px;">
+<div id="ePanel" class="easyui-panel" title="主题教育" style="padding:10px;">
     <div id="list">
     <table>
         <tr>
-            <td>教育动态标题：</td>
+            <td>主题教育标题：</td>
             <td><input class="easyui-searchbox" data-options="searcher:doSearch" style="width:300px"/></td>
         </tr>
     </table>
@@ -18,7 +18,7 @@
             rownumbers="true" fitColumns="true" singleSelect="true">
         <thead>
             <tr>
-                <th field="title" width="350">教育动态标题</th>
+                <th field="title" width="350">主题教育标题</th>
                 <th field="Name" width="100">发布人</th>
                 <th field="Price" width="120">发布时间</th>
                 <th field="status" width="120">审批状态</th>
@@ -26,17 +26,17 @@
         </thead>
         <tbody>
             <tr>
-                <td>关于公布“张家港市社区教育讲师团师资库”的通知</td><td>编辑甲</td><td>2014-06-25</td><td>已审批</td>
+                <td>节粮爱粮、传承美德——大新镇龙潭村志愿者组织开展未成年人田头节粮爱粮教育活动</td><td>编辑甲</td><td>2014-06-25</td><td>已审批</td>
             </tr>
             <tr>
-                <td>2014年张家港市全民终身学习活动周</td><td>编辑乙</td><td>2014-06-25</td><td>未审批</td>
+                <td>丰镇开展食品安全进学校活动</td><td>编辑乙</td><td>2014-06-25</td><td>未审批</td>
             </tr>
         </tbody>
     </table>
     <div id="toolbar">
-        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="add()">发布教育动态</a>
-        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="edit()">修改教育动态</a>
-        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="destroy()">删除教育动态</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="add()">发布主题教育</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="edit()">修改主题教育</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="destroy()">删除主题教育</a>
     </div>
     </div>    
     <div id="edit" style="display:none">
@@ -49,6 +49,10 @@
                 <tr>
                     <td>内容：</td>
                     <td><script type="text/plain" id="editor" style="width:600px;height:240px;"></script></td>
+                </tr>
+                <tr>
+                    <td>封面图：</td>
+                    <td><input type="file" style="width:500px;" /></td>
                 </tr>
             </table>
         </form>

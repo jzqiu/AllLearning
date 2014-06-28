@@ -24,6 +24,11 @@ namespace AL.Backstage.Controllers
             return View();
         }
 
+        public ActionResult Report()
+        {
+            return View();
+        }
+
         [HttpPost]
         [ValidateInput(false)]
         public JsonResult Submit(FormCollection form)
