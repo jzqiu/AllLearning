@@ -32,7 +32,19 @@ namespace AL.Site.Web
             routes.MapRoute(
                 "newscontent",
                 "newscontent_{id}_.html",
-                new { controller = "News", action = "content", id = UrlParameter.Optional });
+                new { controller = "News", action = "Content", id = UrlParameter.Optional });
+            routes.MapRoute(
+                "achievement",
+                "achievement_{id}_.html",
+                new { controller = "Achievement", action = "Index", id = UrlParameter.Optional });
+            routes.MapRoute(
+                "achcontent",
+                "achcontent_{id}_.html",
+                new { controller = "Achievement", action = "Content", id = UrlParameter.Optional });
+            routes.MapRoute(
+                "course",
+                "course_{id}_.html",
+                new { controller = "Course", action = "Index", id = UrlParameter.Optional });
 
             routes.MapRoute(
                 name: "Default",

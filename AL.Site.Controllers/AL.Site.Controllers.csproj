@@ -42,7 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountController.cs" />
+    <Compile Include="AchievementController.cs" />
     <Compile Include="BaseController.cs" />
+    <Compile Include="CourseController.cs" />
     <Compile Include="HomeController.cs" />
     <Compile Include="NewsController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
