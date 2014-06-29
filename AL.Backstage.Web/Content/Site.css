@@ -10,13 +10,13 @@ a:hover { text-decoration: underline; }
 .top_wrapper a:hover { color: #2b2b2b; }
 
 .left { width: 235px; height:100%; border-right:solid 1px #d0d0d0; position:absolute; top:0px; left:0px; bottom:0px; background-color: #ebebeb; overflow:auto;}
-.left .menu { height: 30px; line-height: 30px; text-indent: 40px; font-size: 14px; border-top: solid 1px #e2e2e2; border-bottom: solid 1px #f3f3f3; cursor: pointer; }
+.left .menu { height: 30px; line-height: 30px; text-indent: 10px; font-size: 14px; border-top: solid 1px #e2e2e2; border-bottom: solid 1px #f3f3f3; cursor: pointer; }
 .left .menu:hover { font-size: 15px; }
-.left .menu_1 { background: url('../Images/menu_1.jpg') no-repeat 20px center; }
+/*.left .menu_1 { background: url('../Images/menu_1.jpg') no-repeat 20px center; }
 .left .menu_2 { background: url('../Images/menu_2.jpg') no-repeat 22px center; }
 .left .menu_3 { background: url('../Images/menu_3.jpg') no-repeat 19px center; }
 .left .menu_4 { background: url('../Images/menu_4.jpg') no-repeat 20px center; }
-.left .menu_5 { background: url('../Images/menu_5.jpg') no-repeat 19px center; }
+.left .menu_5 { background: url('../Images/menu_5.jpg') no-repeat 19px center; }*/
 .left .menu2_wrapper { background: #ccd1d7; display: none; }
 .left .menu2_wrapper.show { display: block; }
 .left .menu2_wrapper .menu2 { height: 25px; line-height: 25px; text-indent: 25px; cursor:pointer; }

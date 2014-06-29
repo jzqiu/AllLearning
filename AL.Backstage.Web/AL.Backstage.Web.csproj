@@ -470,6 +470,11 @@
     <Content Include="Views\Course\Courseware.cshtml" />
     <Content Include="Views\Course\Index.cshtml" />
     <Content Include="Views\Achievement\Theme.cshtml" />
+    <Content Include="Views\Study\Detail.cshtml" />
+    <Content Include="Views\System\MUser.cshtml" />
+    <Content Include="Views\System\MEditor.cshtml" />
+    <Content Include="Views\System\LoginLog.cshtml" />
+    <Content Include="Views\System\OprationLog.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
