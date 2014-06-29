@@ -1,5 +1,89 @@
-﻿@{
-    ViewBag.Title = "MEditor";
-}
+﻿<div id="ePanel" class="easyui-panel" title="网站编辑" style="padding: 10px;">
+    <div id="list">
+        <table>
+            <tr>
+                <td>部门：</td>
+                <td style="width: 250px;">
+                    <input class="easyui-combotree" style="width: 180px;"></td>
+                <td>姓名：</td>
+                <td>
+                    <input type="text" style="width: 100%;" /></td>
+            </tr>
+            <tr style="line-height: 30px;">
+                <td>角色：</td>
+                <td colspan="3">
+                    <input type="radio" name="INDEXID" value="1" checked="checked" />
+                    全部
+                    <input type="radio" name="INDEXID" value="2" />
+                    主编
+                    <input type="radio" name="INDEXID" value="3" />
+                    小编 </td>
+            </tr>
+        </table>
+        <table id="dg" class="easyui-datagrid" pagination="true" style="width: auto;"
+            rownumbers="true" fitcolumns="true" singleselect="true" toolbar="#toolbar">
+            <thead>
+                <tr>
+                    <th field="title" width="80">姓名</th>
+                    <th field="Name" width="120">部门</th>
+                    <th field="Price" width="100">角色</th>
+                    <th field="status" width="150">添加时间</th>
+                    <th field="tims" width="80">添加人</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>钱洪祥</td>
+                    <td>张家港市</td>
+                    <td>主编</td>
+                    <td>2014-06-01</td>
+                    <td>管理员</td>
+                </tr>
+                <tr>
+                    <td>丁琪</td>
+                    <td>南丰镇</td>
+                    <td>小编</td>
+                    <td>2014-06-01</td>
+                    <td>管理员</td>
+                </tr>
+            </tbody>
+        </table>
+        <div id="toolbar">
+            <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-search" plain="true" onclick="doSearch()">查询</a>
+            <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-add" plain="true" onclick="add()">添加编辑</a>
+            <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-edit" plain="true" onclick="edit()">修改编辑</a>
+            <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-remove" plain="true" onclick="destroy()">删除编辑</a>
+        </div>
+    </div>
+    <div id="edit" style="display:none">
+            <form id="form" method="post">
+                <table>
+                    <tr>
+                        <td>部门：</td>
+                        <td><input class="easyui-combotree" data-options="required:true" style="width: 180px;"></td>
+                    </tr>
+                    <tr>
+                        <td>姓名：</td>
+                        <td><input class="easyui-combotree" data-options="required:true" style="width: 180px;"></td>
+                    </tr>
+                    <tr style="line-height: 30px;">
+                        <td>角色：</td>
+                        <td>
+                            <input type="radio" name="INDEXID2" value="2" checked="checked" />
+                            主编
+                            <input type="radio" name="INDEXID2" value="3" />
+                            小编 </td>
+                    </tr>
+                </table>
+            </form>
+            <div style="padding:5px">
+                <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" onclick="save()">提交</a>
+                <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="cancel()">取消</a>
+            </div>
+        </div>
+    
+</div>
 
-<h2>MEditor</h2>
+@section scripts{
+    <script type="text/javascript" src="@Url.Content("~/Scripts/backstage.js")"></script>
+}

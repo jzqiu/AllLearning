@@ -1,5 +1,4 @@
-﻿//富文本编辑器
-var um = UM.getEditor('editor');
+﻿
 //提交地址
 var url;
 var title = $(".panel-title").text();
@@ -82,3 +81,6 @@ function save() {
         }
     });
 }
+
+//富文本编辑器
+var um = UM.getEditor('editor');
