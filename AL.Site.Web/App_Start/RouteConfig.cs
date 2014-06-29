@@ -25,6 +25,14 @@ namespace AL.Site.Web
                 "map",
                 "map.html",
                 new { controller = "Home", action = "Map", id = UrlParameter.Optional });
+            routes.MapRoute(
+                "news",
+                "news_{id}_.html",
+                new { controller = "News", action = "Index", id = UrlParameter.Optional });
+            routes.MapRoute(
+                "newscontent",
+                "newscontent_{id}_.html",
+                new { controller = "News", action = "content", id = UrlParameter.Optional });
 
             routes.MapRoute(
                 name: "Default",
