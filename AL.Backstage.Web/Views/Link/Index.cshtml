@@ -18,15 +18,15 @@
         </thead>
         <tbody>
             <tr>
-                <td>@(ViewBag.Title)链接一</td><td>http://</td><td>编辑甲</td><td>2014-06-25</td>
+                <td>@(ViewBag.Title)链接一</td><td>http://</td><td>管理员</td><td>2014-06-25</td>
             </tr>
             <tr>
-                <td>@(ViewBag.Title)链接二</td><td>http://</td><td>编辑乙</td><td>2014-06-25</td>
+                <td>@(ViewBag.Title)链接二</td><td>http://</td><td>管理员</td><td>2014-06-25</td>
             </tr>
         </tbody>
     </table>
     <div id="toolbar">
-        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="add()">发布@(ViewBag.Title)</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="add()">新增@(ViewBag.Title)</a>
         <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="edit()">修改@(ViewBag.Title)</a>
         <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="destroy()">删除@(ViewBag.Title)</a>
     </div>
@@ -36,11 +36,11 @@
             <table>
                 <tr>
                     <td>名称：</td>
-                    <td><input class="easyui-validatebox textbox" type="text" name="title" data-options="required:true"></input></td>
+                    <td><input class="easyui-validatebox" type="text" name="title" data-options="required:true" style="width:200px;"></input></td>
                 </tr>
                 <tr>
                     <td>排序：</td>
-                    <td><input class="easyui-numberbox textbox" data-options="required:true"></input></td>
+                    <td><input class="easyui-numberbox textbox" data-options="required:true" style="width:200px;"></input></td>
                 </tr>
                 <tr>
                     <td>地址：</td>

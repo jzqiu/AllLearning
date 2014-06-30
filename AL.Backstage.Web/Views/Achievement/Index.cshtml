@@ -6,11 +6,11 @@
     @Scripts.Render("~/bundles/umeditor")
 }
 
-<div id="ePanel" class="easyui-panel" title="主题教育" style="padding:10px;">
+<div id="ePanel" class="easyui-panel" title="@ViewBag.Title" style="padding:10px;">
     <div id="list">
     <table>
         <tr>
-            <td>主题教育标题：</td>
+            <td>@(ViewBag.Title)标题：</td>
             <td><input class="easyui-searchbox" data-options="searcher:doSearch" style="width:300px"/></td>
         </tr>
     </table>
@@ -18,7 +18,7 @@
             rownumbers="true" fitColumns="true" singleSelect="true">
         <thead>
             <tr>
-                <th field="title" width="350">主题教育标题</th>
+                <th field="title" width="350">@(ViewBag.Title)标题</th>
                 <th field="Name" width="100">发布人</th>
                 <th field="Price" width="120">发布时间</th>
                 <th field="status" width="120">审批状态</th>
@@ -34,9 +34,9 @@
         </tbody>
     </table>
     <div id="toolbar">
-        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="add()">发布主题教育</a>
-        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="edit()">修改主题教育</a>
-        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="destroy()">删除主题教育</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="add()">发布@(ViewBag.Title)</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="edit()">修改@(ViewBag.Title)</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="destroy()">删除@(ViewBag.Title)</a>
     </div>
     </div>    
     <div id="edit" style="display:none">

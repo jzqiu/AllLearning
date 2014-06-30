@@ -13,5 +13,10 @@ namespace AL.Backstage.Controllers
         {
             return View();
         }
+
+        public ActionResult Statistics()
+        {
+            return View();
+        }
     }
 }

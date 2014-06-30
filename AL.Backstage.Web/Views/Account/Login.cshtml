@@ -31,18 +31,19 @@
     @Scripts.Render("~/bundles/jquery")
     <script type="text/javascript">
         $(".but_submit,#but_submit").click(function () {
-            if (!$("#user_name").val().replace(/\s/g, "")) {
-                alert("请输入用户名!");
-                $("#user_name").val("");
-                $("#user_name").focus();
-                return false;
-            }
-            if (!$("#user_pwd").val().replace(/\s/g, "")) {
-                alert("请输入密码!");
-                $("#user_pwd").val("");
-                $("#user_pwd").focus();
-                return false;
-            }
+            //if (!$("#user_name").val().replace(/\s/g, "")) {
+            //    alert("请输入用户名!");
+            //    $("#user_name").val("");
+            //    $("#user_name").focus();
+            //    return false;
+            //}
+            //if (!$("#user_pwd").val().replace(/\s/g, "")) {
+            //    alert("请输入密码!");
+            //    $("#user_pwd").val("");
+            //    $("#user_pwd").focus();
+            //    return false;
+            //}
+            location.href = "/Home/Index";
         });
     </script>
 </body>

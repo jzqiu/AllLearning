@@ -6,7 +6,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
-    <title>@ViewBag.Title - 后台管理系统</title>
+    <title>后台管理系统</title>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <meta name="viewport" content="width=device-width" />
     @Styles.Render("~/Content/css")
@@ -17,7 +17,7 @@
     <div class="top_wrapper">
         <div class="top_content">
             <span class="top_left">后台管理系统</span>
-            <span>您好 , <span>XXX</span> | <a href="#">设置</a> | <a href="#">退出</a> </span>
+            <span>您好 , <span>某用户</span> | <a href="#">设置</a> | <a href="/Account/Login">退出</a> </span>
         </div>
     </div>
     <div class="content">
@@ -36,9 +36,9 @@
             </div>
             <div class="menu">成果展示</div>
             <div class="menu2_wrapper">
-                <div class="menu2" data-url="/Achievement/Theme">主题教育</div>
-                <div class="menu2">社区活动</div>
-                <div class="menu2">学习型组织建设</div>
+                <div class="menu2" data-url="/Achievement/Index/1">主题教育</div>
+                <div class="menu2" data-url="/Achievement/Index/2">社区活动</div>
+                <div class="menu2" data-url="/Achievement/Index/3">学习型组织建设</div>
             </div>
             <div class="menu">链接管理</div>
             <div class="menu2_wrapper">
@@ -49,7 +49,7 @@
             <div class="menu">学习数据统计</div>
             <div class="menu2_wrapper">
                 <div class="menu2" data-url="/Study/Detail">学习明细</div>
-                <div class="menu2">学分统计</div>
+                <div class="menu2" data-url="/Study/Statistics">数据统计</div>
             </div>
             <div class="menu">系统管理</div>
             <div class="menu2_wrapper">

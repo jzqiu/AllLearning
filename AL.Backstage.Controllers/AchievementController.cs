@@ -9,8 +9,20 @@ namespace AL.Backstage.Controllers
 {
     public class AchievementController:BaseController
     {
-        public ActionResult Theme()
+        public ActionResult Index(int id)
         {
+            switch (id)
+            {
+                case 1:
+                    ViewBag.Title = "主题教育";
+                    break;
+                case 2:
+                    ViewBag.Title = "社区活动";
+                    break;
+                case 3:
+                    ViewBag.Title = "学习型组织建设";
+                    break;
+            }
             return View();
         }
     }

@@ -1,0 +1,69 @@
+﻿@section head{
+    <script type="text/javascript" src="@Url.Content("~/Content/amcharts/amcharts.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/amcharts/pie.js")"></script>
+    <script type="text/javascript">
+        var chart;
+        var legend;
+
+        var chartData = [
+            {
+                "country": "30~40岁",
+                "litres": 156
+            },
+            {
+                "country": "40~50岁",
+                "litres": 131
+            },
+            {
+                "country": "20~30岁",
+                "litres": 115
+            },
+            {
+                "country": "50~60岁",
+                "litres": 109
+            },
+            {
+                "country": "60~70岁",
+                "litres": 108.3
+            },
+            {
+                "country": "15~20岁",
+                "litres": 65
+            },
+            {
+                "country": ">70岁",
+                "litres": 50
+            }
+        ];
+
+        AmCharts.ready(function () {
+            // PIE CHART
+            chart = new AmCharts.AmPieChart();
+            chart.dataProvider = chartData;
+            chart.titleField = "country";
+            chart.valueField = "litres";
+
+            // LEGEND
+            legend = new AmCharts.AmLegend();
+            legend.align = "center";
+            legend.markerType = "circle";
+            chart.balloonText = "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> ([[percents]]%)</span>";
+            chart.addLegend(legend);
+
+            chart.depth3D = 10;
+            chart.angle = 10;
+            chart.startDuration = 0;
+
+            // WRITE
+            chart.write("chartdiv");
+        });
+    </script>
+}
+<div class="easyui-tabs" id="ePanel">
+    <div title="学员年龄组成" style="padding: 10px">
+        <div id="chartdiv" style="width: 600px; height: 400px;"></div>
+    </div>
+    <div title="其他" style="padding: 10px">
+        其他有需要统计的，最好以表格形式，明确的提供
+    </div>
+</div>

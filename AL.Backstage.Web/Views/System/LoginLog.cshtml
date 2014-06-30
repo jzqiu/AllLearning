@@ -1,5 +1,36 @@
-﻿@{
-    ViewBag.Title = "LoginLog";
-}
-
-<h2>LoginLog</h2>
+﻿<div id="ePanel" class="easyui-panel" title="登录日志" style="padding:10px;">
+    <table>
+        <tr>
+            <td>账号：</td>
+            <td style="width:250px;"><input type="text" style="width:180px;"></td>
+            <td>姓名：</td>
+            <td><input type="text" style="width:100%;" /></td>
+        </tr>
+        <tr style="line-height:30px;">
+            <td>时间范围：</td>
+            <td colspan="3"><input class="easyui-datebox"></input>~<input class="easyui-datebox"></input></td>
+        </tr>
+    </table>
+    <table id="dg" class="easyui-datagrid" pagination="true" style="width:auto;"
+            rownumbers="true" fitColumns="true" singleSelect="true" toolbar="#toolbar">
+        <thead>
+            <tr>
+                <th field="title" width="80">姓名</th>
+                <th field="Name" width="120">账号</th>
+                <th field="Price" width="250">登录IP</th>
+                <th field="status" width="220">登录时间</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>钱洪祥</td><td>H75462</td><td>61.25.100.39</td><td>2014-06-01 10:11:59 </td>
+            </tr>
+            <tr>
+                <td>丁琪</td><td>H42785</td><td>61.25.100.39</td><td>2014-06-01 10:23:59</td>
+            </tr>
+        </tbody>
+    </table>
+    <div id="toolbar">
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-search" plain="true" onclick="add()">查询</a>
+    </div>
+</div>
