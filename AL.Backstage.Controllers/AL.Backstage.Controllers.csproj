@@ -46,6 +46,7 @@
     <Compile Include="BaseController.cs" />
     <Compile Include="CourseController.cs" />
     <Compile Include="HomeController.cs" />
+    <Compile Include="LinkController.cs" />
     <Compile Include="NewsController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StudyController.cs" />

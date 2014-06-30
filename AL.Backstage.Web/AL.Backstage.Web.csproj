@@ -475,6 +475,7 @@
     <Content Include="Views\System\MEditor.cshtml" />
     <Content Include="Views\System\LoginLog.cshtml" />
     <Content Include="Views\System\OprationLog.cshtml" />
+    <Content Include="Views\Link\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

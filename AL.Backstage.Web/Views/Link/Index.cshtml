@@ -1,0 +1,62 @@
+﻿<div id="ePanel" class="easyui-panel" title="@ViewBag.Title" style="padding:10px;">
+    <div id="list">
+    <table>
+        <tr>
+            <td>@(ViewBag.Title)名称：</td>
+            <td><input class="easyui-searchbox" data-options="searcher:doSearch" style="width:300px"/></td>
+        </tr>
+    </table>
+    <table id="dg" class="easyui-datagrid" toolbar="#toolbar" pagination="true"
+            rownumbers="true" fitColumns="true" singleSelect="true">
+        <thead>
+            <tr>
+                <th field="title" width="180">@(ViewBag.Title)名称</th>
+                <th field="url" width="250">链接地址</th>
+                <th field="Name" width="100">添加人</th>
+                <th field="Price" width="120">添加时间</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@(ViewBag.Title)链接一</td><td>http://</td><td>编辑甲</td><td>2014-06-25</td>
+            </tr>
+            <tr>
+                <td>@(ViewBag.Title)链接二</td><td>http://</td><td>编辑乙</td><td>2014-06-25</td>
+            </tr>
+        </tbody>
+    </table>
+    <div id="toolbar">
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="add()">发布@(ViewBag.Title)</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="edit()">修改@(ViewBag.Title)</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="destroy()">删除@(ViewBag.Title)</a>
+    </div>
+    </div>    
+    <div id="edit" style="display:none">
+        <form id="form" method="post">
+            <table>
+                <tr>
+                    <td>名称：</td>
+                    <td><input class="easyui-validatebox textbox" type="text" name="title" data-options="required:true"></input></td>
+                </tr>
+                <tr>
+                    <td>排序：</td>
+                    <td><input class="easyui-numberbox textbox" data-options="required:true"></input></td>
+                </tr>
+                <tr>
+                    <td>地址：</td>
+                    <td><input class="easyui-validatebox textbox" type="text" name="url" data-options="required:true,validType:'url'" style="width:500px;"></td>
+                </tr>
+            </table>
+        </form>
+        <div style="text-align:center;padding:5px">
+            <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" onclick="save()">提交</a>
+            <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="cancel()">取消</a>
+        </div>
+    </div>
+    
+</div>
+
+@section scripts{
+    <script type="text/javascript" src="@Url.Content("~/Scripts/backstage.js")"></script>
+}
+
