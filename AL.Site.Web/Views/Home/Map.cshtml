@@ -7,10 +7,42 @@
 </div>
 
 <div class="left">
-    <div class="left_title">标题</div>
-    <a href="#" class="left_menu">菜单一</a>
-    <a href="#" class="left_menu">菜单一</a>
-    <a href="#" class="left_menu">菜单一</a>
-    <a href="#" class="left_menu">菜单一</a>
-    <a href="#" class="left_menu">菜单一</a>
+    <div class="left_title">学习地图</div>
 </div>
+<div class="right">
+    <div class="right_title2"><span class="black">学习地图</span></div>
+    <br />
+    <div class="map_img">
+        <img src="../Images/map/map.jpg" border="0" usemap="#my_map" />
+    </div>
+    <div class="map_details"></div>
+    <map name="my_map" id="my_map">
+        <area shape="poly" href="" title="金港镇" coords="3,40,47,8,55,4,72,5,89,8,101,12,111,15,113,20,109,30,104,38,98,47,94,54,85,71,86,79,86,88,76,92,73,102,72,112,63,113,24,102,18,96,20,79,12,74">
+        <area shape="poly" href="" title="大新镇" coords="121,18,114,40,100,58,131,77,139,56,143,38,154,30">
+        <area shape="poly" href="" title="锦丰镇" coords="149,41,169,29,233,27,233,27,285,29,258,50,240,53,237,69,221,61,213,79,216,89,202,102,195,86,163,89,137,81">
+        <area shape="poly" href="" title="乐余镇" coords="296,33,312,70,295,91,278,109,279,122,266,126,241,103,226,90,219,81,224,68,241,72,281,36">
+        <area shape="poly" href="" title="现代家业示范园区" coords="315,79,286,111,287,120,285,128,294,140,287,150,297,162,301,150,336,115">
+        <area shape="poly" href="" title="南丰镇" coords="219,94,200,113,221,132,239,149,250,157,267,156,266,134">
+        <area shape="poly" href="" title="墉桥镇" coords="196,122,238,153,256,167,251,187,251,205,245,211,249,223,245,226,231,200,195,191,174,178">
+        <area shape="poly" href="" title="凤凰镇" coords="238,227,229,205,201,199,180,198,169,188,157,187,148,195,159,208,168,230,176,244,187,254,204,249">
+        <area shape="poly" href="" title="杨舍镇" coords="191,105,167,161,161,177,143,183,133,193,123,197,118,190,121,170,96,136,78,123,82,98,95,94,94,82,94,73,171,100,185,96,191,94">
+    </map>
+</div>
+<div class="clear"></div>
+
+@section scripts{
+    <script type="text/javascript">
+        !function () {
+            var imgList = ["jin_gang", "da_xin", "jin_feng", "le_yu", "yuan_qu", "nan_feng", "tang_qiao", "feng_huang", "yang_she"];
+            for (var i = 0; i < imgList.length; i++) {
+                var img = new Image();
+                img.src = "../Images/map/" + imgList[i] + ".jpg";
+                imgList[i] = img;
+            }
+            $("#my_map area").mouseover(function () {
+                var index = $("#my_map area").index($(this));
+                $(".map_details").css("background-image", "url(" + imgList[index].src + ")")
+            });
+        }();
+    </script>
+}

@@ -201,3 +201,8 @@ a:hover { color: black; text-decoration: underline; }
 .bottom_box_title { color: #1647a1; }
 
 .bottom_btn { display: inline-block; width: 85px; height: 28px; background: url('../Images/login/bottom_btn.jpg'); text-align: center; cursor: pointer; }
+
+/******* 地图 *********/
+/*.map_right { width: 770px; margin-left: 13px; padding-top: 30px; float: left; color: #666666; }*/
+.map_img { width: 400px; float: left; background: url('../Images/map/arrow.jpg') no-repeat right center; }
+.map_details { width: 343px; height: 260px; border: dashed 1px gray; margin-left: 15px; text-align: center; float: left; background: url('../Images/map/jin_gang.jpg') no-repeat center center; }

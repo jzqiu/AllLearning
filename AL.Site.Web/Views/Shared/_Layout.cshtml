@@ -17,8 +17,8 @@
                 <a href="index.html" class="logo"><img src="@Url.Content("~/Images/index/logo.jpg")" /></a>
                 <div class="functions">
                     <a class="first" href="login.html">登录</a>
-                    <a href="#">设为首页</a>
-                    <a href="#">加入收藏</a>
+                    <a onclick="this.style.behavior=’url(#default#homepage)’;this.setHomePage(’http://www.dafacai.net’);" href="#">设为首页</a>
+                    <a href='#' onClick="javascript:window.external.AddFavorite(sURL, sTitle,'注skyaspnet提醒:页面名称(为兼容FF)');" rel="sidebar">加入收藏</a>
                     <a href="#">联系我们</a>
                     <a href="#">忘记密码?</a>
                 </div>
