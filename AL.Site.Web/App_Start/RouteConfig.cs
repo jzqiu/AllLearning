@@ -22,6 +22,14 @@ namespace AL.Site.Web
                 "login.html",
                 new { controller = "Account", action = "Login", id = UrlParameter.Optional });
             routes.MapRoute(
+                "register",
+                "register.html",
+                new { controller = "Account", action = "Register", id = UrlParameter.Optional });
+            routes.MapRoute(
+                "fgpassword",
+                "fgpassword.html",
+                new { controller = "Account", action = "FgPassword", id = UrlParameter.Optional });
+            routes.MapRoute(
                 "map",
                 "map.html",
                 new { controller = "Home", action = "Map", id = UrlParameter.Optional });
@@ -45,6 +53,10 @@ namespace AL.Site.Web
                 "course",
                 "course_{id}_.html",
                 new { controller = "Course", action = "Index", id = UrlParameter.Optional });
+            routes.MapRoute(
+                "contact",
+                "contact.html",
+                new { controller = "Home", action = "Contact", id = UrlParameter.Optional });
 
             routes.MapRoute(
                 name: "Default",

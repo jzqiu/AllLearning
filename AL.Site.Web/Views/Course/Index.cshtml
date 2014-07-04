@@ -16,7 +16,13 @@
     <a href="course_4_.html" class="left_menu">全部课程</a>
 </div>
 <div class="right">
-    <div class="right_title2"><span class="black">课程中心</span> > @ViewBag.Title</div>
+    <div class="right_title2"><span class="black">课程中心</span> > @ViewBag.Title
+        <!-- 搜索框 -->
+        <div class="search_box">
+            <input type="text" class="search_input no_txt" value=""  data-title="请输入搜索内容"  />
+            <input type="submit" class="search_btn" value="搜&nbsp;&nbsp;索"/>
+        </div>
+    </div>
     <div class="Videos_list">
         <div id="bd-videos" class="bd-videos">
             <ul id="bd-video-list" class="bd-video-list" style="display: block;">

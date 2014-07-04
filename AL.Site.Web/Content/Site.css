@@ -166,7 +166,7 @@ a:hover { color: black; text-decoration: underline; }
 
 .right .black { color: black; }
 
-.right_title2 { height: 17px; line-height: 17px; padding-bottom: 11px; border-bottom: solid 1px #e5e5e5; position: relative; }
+.right_title2 { height:35px; line-height:30px; border-bottom:solid 1px gray; position:relative; }
 
 .right_title2 span { font-size: 18px; color: black; margin-right: 5px; }
 
@@ -206,3 +206,20 @@ a:hover { color: black; text-decoration: underline; }
 /*.map_right { width: 770px; margin-left: 13px; padding-top: 30px; float: left; color: #666666; }*/
 .map_img { width: 400px; float: left; background: url('../Images/map/arrow.jpg') no-repeat right center; }
 .map_details { width: 343px; height: 260px; border: dashed 1px gray; margin-left: 15px; text-align: center; float: left; background: url('../Images/map/jin_gang.jpg') no-repeat center center; }
+
+/** 搜索框 **/
+.search_box { width:465px; height:32px; background:url('../Images/index/input_bg.jpg') no-repeat 0 0; position:absolute; top:0px; right:0px; }
+.search_input { width:367px; height: 20px;line-height: 20px; padding-left:10px; float:left; outline: none medium; color:#2b2b2b; border:0; background:none; position:relative; top:7px;}
+.no_txt { color:gray; }
+.search_btn { cursor: pointer; width: 88px; height: 32px;  border: 0; background: none; color: #000; font-size: 14px; position:absolute; top:0; right:0; }
+
+/*** 注册 ***/
+.em1 { margin-left: 1em; }
+.register_wrapper { width:583px; height:472px; text-align:center; padding-top:100px; margin:0 auto;  background: url('../Images/login/register_bg.gif') no-repeat center center; position:relative; }
+.register_wrapper p { height: 40px; line-height: 40px;}
+.register_wrapper .register_first { text-align:left; padding-left:134px; }
+.register_wrapper .register_second { line-height:15px; }
+.register_wrapper p.red { color:red; }
+.register_wrapper input{ width: 185px; height: 25px; line-height: 25px; margin-left: 10px; border: solid 1px #d6d6d6; }
+.register_wrapper input.register_btn { width:85px; height:28px; border:none; background:url('../Images/login/register_btn.jpg') no-repeat center center; cursor:pointer; }
+.register_wrapper .register_btn_ok { margin-left:48px; }

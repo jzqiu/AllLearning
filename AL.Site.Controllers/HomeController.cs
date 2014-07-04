@@ -26,8 +26,6 @@ namespace AL.Site.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
-
             return View();
         }
 

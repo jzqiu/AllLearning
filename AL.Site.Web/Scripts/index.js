@@ -131,3 +131,11 @@ $(".right_title").click(function ()
     $(this).addClass("right_title_show");    
 });
 
+!function () {
+    $(".search_input").val($(".search_input").attr("data-title")).focus(function () {
+        if ($(this).hasClass("no_txt")) { $(this).removeClass("no_txt").val(""); }
+    }).blur(function () {
+        if (!$(this).val().replace(/\s/gi, "")) { $(this).addClass("no_txt").val($(this).attr("data-title")); }
+    });
+}();
+

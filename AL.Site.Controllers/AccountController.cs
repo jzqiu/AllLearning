@@ -13,5 +13,15 @@ namespace AL.Site.Controllers
         {
             return View();
         }
+
+        public ActionResult Register()
+        {
+            return View();
+        }
+
+        public ActionResult FgPassword()
+        {
+            return View();
+        }
     }
 }
