@@ -6,6 +6,13 @@
     <edmx:Diagrams>
       <Diagram DiagramId="6a794d822f1045e0928debb9945232ab" Name="关系图1">
         <EntityTypeShape EntityType="AL.Core.Models.TestTable" Width="1.5" PointX="0.875" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AL.Core.Models.CMSColumn" Width="1.5" PointX="3" PointY="0.5" />
+        <EntityTypeShape EntityType="AL.Core.Models.CMSCourse" Width="1.5" PointX="6" PointY="2" />
+        <EntityTypeShape EntityType="AL.Core.Models.CMSCourseWare" Width="1.5" PointX="9" PointY="3.5" />
+        <EntityTypeShape EntityType="AL.Core.Models.CMSPublish" Width="1.5" PointX="12" PointY="5" />
+        <EntityTypeShape EntityType="AL.Core.Models.SysLoginLog" Width="1.5" PointX="15" PointY="6.5" />
+        <EntityTypeShape EntityType="AL.Core.Models.SysOperationLog" Width="1.5" PointX="18" PointY="8" />
+        <EntityTypeShape EntityType="AL.Core.Models.SysUser" Width="1.5" PointX="0.5" PointY="9.5" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

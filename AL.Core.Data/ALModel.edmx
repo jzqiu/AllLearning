@@ -4,10 +4,152 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="AL.Core.Models.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="AL.Core.Models.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="ALCoreModelsStoreContainer">
+          <EntitySet Name="CMSColumn" EntityType="AL.Core.Models.Store.CMSColumn" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CMSCourse" EntityType="AL.Core.Models.Store.CMSCourse" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CMSCourseWare" EntityType="AL.Core.Models.Store.CMSCourseWare" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CMSPublish" EntityType="AL.Core.Models.Store.CMSPublish" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SysLoginLog" EntityType="AL.Core.Models.Store.SysLoginLog" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SysOperationLog" EntityType="AL.Core.Models.Store.SysOperationLog" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SysUser" EntityType="AL.Core.Models.Store.SysUser" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="TestTables" EntityType="AL.Core.Models.Store.TestTables" store:Type="Tables" Schema="dbo" />
         </EntityContainer>
+        <EntityType Name="CMSColumn">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="PCode" Type="varchar" MaxLength="20" />
+          <Property Name="Seq" Type="int" />
+          <Property Name="IsSysDef" Type="int" />
+        </EntityType>
+        <EntityType Name="CMSCourse">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="WareId" Type="int" />
+          <Property Name="Title" Type="nvarchar" MaxLength="200" />
+          <Property Name="KeyWord" Type="nvarchar" MaxLength="500" />
+          <Property Name="Speakers" Type="nvarchar" MaxLength="50" />
+          <Property Name="ImgUrl" Type="varchar" MaxLength="500" />
+          <Property Name="ColumnCode" Type="varchar" MaxLength="20" />
+          <Property Name="ColumnName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="2000" />
+          <Property Name="Lesson" Type="decimal" Scale="1" />
+          <Property Name="Credit" Type="decimal" Scale="1" />
+          <Property Name="TimeLength" Type="varchar" MaxLength="20" />
+          <Property Name="IsBoutique" Type="int" />
+          <Property Name="Seq" Type="int" />
+          <Property Name="Hits" Type="int" />
+          <Property Name="IsDeleted" Type="int" />
+          <Property Name="CreateTime" Type="datetime" />
+          <Property Name="CreateUser" Type="varchar" MaxLength="20" />
+          <Property Name="CreateUserName" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="CMSCourseWare">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="WareUrl" Type="varchar" MaxLength="500" />
+          <Property Name="CreateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="CMSPublish">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="ColumnCode" Type="varchar" MaxLength="20" />
+          <Property Name="ColumnName" Type="nvarchar" MaxLength="50" />
+          <Property Name="GradeCode" Type="varchar" MaxLength="20" />
+          <Property Name="GradeName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Contents" Type="nvarchar(max)" />
+          <Property Name="Author" Type="nvarchar" MaxLength="50" />
+          <Property Name="Source" Type="nvarchar" MaxLength="500" />
+          <Property Name="KeyWord" Type="nvarchar" MaxLength="500" />
+          <Property Name="ImgUrl" Type="varchar" MaxLength="500" />
+          <Property Name="UpLineTime" Type="datetime" />
+          <Property Name="DownLineTime" Type="datetime" />
+          <Property Name="Seq" Type="int" />
+          <Property Name="IsDeleted" Type="int" />
+          <Property Name="CreateTime" Type="datetime" />
+          <Property Name="CreateUser" Type="varchar" MaxLength="20" />
+          <Property Name="CreateUserName" Type="nvarchar" MaxLength="20" />
+          <Property Name="IsChecked" Type="int" />
+          <Property Name="CheckUser" Type="varchar" MaxLength="20" />
+          <Property Name="CheckUserName" Type="nvarchar" MaxLength="20" />
+          <Property Name="CheckTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="SysLoginLog">
+          <Key>
+            <PropertyRef Name="LogId" />
+          </Key>
+          <Property Name="LogId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="LoginName" Type="nvarchar" MaxLength="100" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="LoginTime" Type="datetime" Nullable="false" />
+          <Property Name="LoginIp" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="SysOperationLog">
+          <Key>
+            <PropertyRef Name="LogId" />
+          </Key>
+          <Property Name="LogId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="LoginName" Type="nvarchar" MaxLength="100" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="LogTime" Type="datetime" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="SysUser">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="LoginName" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="Available" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="Mail" Type="nvarchar" MaxLength="50" />
+          <Property Name="Card" Type="nvarchar" MaxLength="18" />
+          <Property Name="Sex" Type="char" MaxLength="1" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="CellPhone" Type="nvarchar" MaxLength="100" />
+          <Property Name="Address" Type="nvarchar" MaxLength="100" />
+          <Property Name="PostalCode" Type="nvarchar" MaxLength="6" />
+          <Property Name="EduLevel" Type="nvarchar" MaxLength="50" />
+          <Property Name="PwdQuestion" Type="nvarchar" MaxLength="50" />
+          <Property Name="PwdAnswer" Type="nvarchar" MaxLength="50" />
+          <Property Name="RegisterDate" Type="date" />
+          <Property Name="CataLogId" Type="int" />
+          <Property Name="LastLoginDate" Type="date" />
+          <Property Name="Desc0" Type="date" />
+          <Property Name="Desc1" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="100" />
+          <Property Name="Remark1" Type="nvarchar" MaxLength="100" />
+          <Property Name="Remark2" Type="nvarchar" MaxLength="100" />
+          <Property Name="Remark3" Type="nvarchar" MaxLength="100" />
+          <Property Name="Remark4" Type="nvarchar" MaxLength="100" />
+          <Property Name="Remark5" Type="nvarchar" MaxLength="100" />
+          <Property Name="Remark6" Type="nvarchar" MaxLength="100" />
+          <Property Name="Remark7" Type="nvarchar" MaxLength="100" />
+          <Property Name="Remark8" Type="nvarchar" MaxLength="100" />
+          <Property Name="Remark9" Type="nvarchar" MaxLength="100" />
+          <Property Name="PhotoPath" Type="nvarchar" />
+          <Property Name="JoinJob" Type="nvarchar" MaxLength="50" />
+          <Property Name="XueLi" Type="nvarchar" MaxLength="50" />
+          <Property Name="DangPai" Type="nvarchar" MaxLength="100" />
+          <Property Name="ZhiWu" Type="nvarchar" MaxLength="1000" />
+          <Property Name="JiBie" Type="nvarchar" MaxLength="1000" />
+          <Property Name="SFKT" Type="int" />
+          <Property Name="SFTX" Type="int" />
+        </EntityType>
         <EntityType Name="TestTables">
           <Key>
             <PropertyRef Name="Id" />
@@ -19,13 +161,19 @@
           <Property Name="AddDate" Type="datetime" Nullable="false" />
           <Property Name="Timestamp" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
         </EntityType>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="AL.Core.Models" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="ALDbContext" p1:LazyLoadingEnabled="true">
           <EntitySet Name="TestTables" EntityType="AL.Core.Models.TestTable" />
+          <EntitySet Name="CMSColumns" EntityType="AL.Core.Models.CMSColumn" />
+          <EntitySet Name="CMSCourses" EntityType="AL.Core.Models.CMSCourse" />
+          <EntitySet Name="CMSCourseWares" EntityType="AL.Core.Models.CMSCourseWare" />
+          <EntitySet Name="CMSPublishes" EntityType="AL.Core.Models.CMSPublish" />
+          <EntitySet Name="SysLoginLogs" EntityType="AL.Core.Models.SysLoginLog" />
+          <EntitySet Name="SysOperationLogs" EntityType="AL.Core.Models.SysOperationLog" />
+          <EntitySet Name="SysUsers" EntityType="AL.Core.Models.SysUser" />
         </EntityContainer>
         <EntityType Name="TestTable">
           <Key>
@@ -37,6 +185,141 @@
           <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
           <Property Name="AddDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Timestamp" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" p1:StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="CMSColumn">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Type="String" Name="Code" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PCode" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Seq" />
+          <Property Type="Int32" Name="IsSysDef" />
+        </EntityType>
+        <EntityType Name="CMSCourse">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="WareId" />
+          <Property Type="String" Name="Title" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="KeyWord" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Speakers" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ImgUrl" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ColumnCode" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ColumnName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="Lesson" Precision="18" Scale="1" />
+          <Property Type="Decimal" Name="Credit" Precision="18" Scale="1" />
+          <Property Type="String" Name="TimeLength" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="IsBoutique" />
+          <Property Type="Int32" Name="Seq" />
+          <Property Type="Int32" Name="Hits" />
+          <Property Type="Int32" Name="IsDeleted" />
+          <Property Type="DateTime" Name="CreateTime" Precision="3" />
+          <Property Type="String" Name="CreateUser" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CreateUserName" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="CMSCourseWare">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Title" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="WareUrl" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CreateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="CMSPublish">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Title" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ColumnCode" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ColumnName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="GradeCode" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="GradeName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Contents" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Author" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Source" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="KeyWord" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ImgUrl" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="UpLineTime" Precision="3" />
+          <Property Type="DateTime" Name="DownLineTime" Precision="3" />
+          <Property Type="Int32" Name="Seq" />
+          <Property Type="Int32" Name="IsDeleted" />
+          <Property Type="DateTime" Name="CreateTime" Precision="3" />
+          <Property Type="String" Name="CreateUser" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CreateUserName" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="IsChecked" />
+          <Property Type="String" Name="CheckUser" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CheckUserName" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CheckTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="SysLoginLog">
+          <Key>
+            <PropertyRef Name="LogId" />
+          </Key>
+          <Property Type="Int32" Name="LogId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+          <Property Type="String" Name="LoginName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Name" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="LoginTime" Nullable="false" Precision="3" />
+          <Property Type="String" Name="LoginIp" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SysOperationLog">
+          <Key>
+            <PropertyRef Name="LogId" />
+          </Key>
+          <Property Type="Int32" Name="LogId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+          <Property Type="String" Name="LoginName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Name" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="LogTime" Nullable="false" Precision="3" />
+          <Property Type="String" Name="Description" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SysUser">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+          <Property Type="String" Name="LoginName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Password" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Name" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Available" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="Mail" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Card" MaxLength="18" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Sex" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="Phone" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CellPhone" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Address" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PostalCode" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="EduLevel" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PwdQuestion" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PwdAnswer" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="RegisterDate" Precision="0" />
+          <Property Type="Int32" Name="CataLogId" />
+          <Property Type="DateTime" Name="LastLoginDate" Precision="0" />
+          <Property Type="DateTime" Name="Desc0" Precision="0" />
+          <Property Type="String" Name="Desc1" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Remark1" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Remark2" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Remark3" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Remark4" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Remark5" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Remark6" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Remark7" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Remark8" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Remark9" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PhotoPath" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="JoinJob" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="XueLi" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DangPai" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ZhiWu" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="JiBie" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="SFKT" />
+          <Property Type="Int32" Name="SFTX" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -53,6 +336,148 @@
                 <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
                 <ScalarProperty Name="AddDate" ColumnName="AddDate" />
                 <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CMSColumns">
+            <EntityTypeMapping TypeName="AL.Core.Models.CMSColumn">
+              <MappingFragment StoreEntitySet="CMSColumn">
+                <ScalarProperty Name="IsSysDef" ColumnName="IsSysDef" />
+                <ScalarProperty Name="Seq" ColumnName="Seq" />
+                <ScalarProperty Name="PCode" ColumnName="PCode" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CMSCourses">
+            <EntityTypeMapping TypeName="AL.Core.Models.CMSCourse">
+              <MappingFragment StoreEntitySet="CMSCourse">
+                <ScalarProperty Name="CreateUserName" ColumnName="CreateUserName" />
+                <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Hits" ColumnName="Hits" />
+                <ScalarProperty Name="Seq" ColumnName="Seq" />
+                <ScalarProperty Name="IsBoutique" ColumnName="IsBoutique" />
+                <ScalarProperty Name="TimeLength" ColumnName="TimeLength" />
+                <ScalarProperty Name="Credit" ColumnName="Credit" />
+                <ScalarProperty Name="Lesson" ColumnName="Lesson" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ColumnName" ColumnName="ColumnName" />
+                <ScalarProperty Name="ColumnCode" ColumnName="ColumnCode" />
+                <ScalarProperty Name="ImgUrl" ColumnName="ImgUrl" />
+                <ScalarProperty Name="Speakers" ColumnName="Speakers" />
+                <ScalarProperty Name="KeyWord" ColumnName="KeyWord" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="WareId" ColumnName="WareId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CMSCourseWares">
+            <EntityTypeMapping TypeName="AL.Core.Models.CMSCourseWare">
+              <MappingFragment StoreEntitySet="CMSCourseWare">
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="WareUrl" ColumnName="WareUrl" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CMSPublishes">
+            <EntityTypeMapping TypeName="AL.Core.Models.CMSPublish">
+              <MappingFragment StoreEntitySet="CMSPublish">
+                <ScalarProperty Name="CheckTime" ColumnName="CheckTime" />
+                <ScalarProperty Name="CheckUserName" ColumnName="CheckUserName" />
+                <ScalarProperty Name="CheckUser" ColumnName="CheckUser" />
+                <ScalarProperty Name="IsChecked" ColumnName="IsChecked" />
+                <ScalarProperty Name="CreateUserName" ColumnName="CreateUserName" />
+                <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Seq" ColumnName="Seq" />
+                <ScalarProperty Name="DownLineTime" ColumnName="DownLineTime" />
+                <ScalarProperty Name="UpLineTime" ColumnName="UpLineTime" />
+                <ScalarProperty Name="ImgUrl" ColumnName="ImgUrl" />
+                <ScalarProperty Name="KeyWord" ColumnName="KeyWord" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="Author" ColumnName="Author" />
+                <ScalarProperty Name="Contents" ColumnName="Contents" />
+                <ScalarProperty Name="GradeName" ColumnName="GradeName" />
+                <ScalarProperty Name="GradeCode" ColumnName="GradeCode" />
+                <ScalarProperty Name="ColumnName" ColumnName="ColumnName" />
+                <ScalarProperty Name="ColumnCode" ColumnName="ColumnCode" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SysLoginLogs">
+            <EntityTypeMapping TypeName="AL.Core.Models.SysLoginLog">
+              <MappingFragment StoreEntitySet="SysLoginLog">
+                <ScalarProperty Name="LoginIp" ColumnName="LoginIp" />
+                <ScalarProperty Name="LoginTime" ColumnName="LoginTime" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="LoginName" ColumnName="LoginName" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="LogId" ColumnName="LogId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SysOperationLogs">
+            <EntityTypeMapping TypeName="AL.Core.Models.SysOperationLog">
+              <MappingFragment StoreEntitySet="SysOperationLog">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="LogTime" ColumnName="LogTime" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="LoginName" ColumnName="LoginName" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="LogId" ColumnName="LogId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SysUsers">
+            <EntityTypeMapping TypeName="AL.Core.Models.SysUser">
+              <MappingFragment StoreEntitySet="SysUser">
+                <ScalarProperty Name="SFTX" ColumnName="SFTX" />
+                <ScalarProperty Name="SFKT" ColumnName="SFKT" />
+                <ScalarProperty Name="JiBie" ColumnName="JiBie" />
+                <ScalarProperty Name="ZhiWu" ColumnName="ZhiWu" />
+                <ScalarProperty Name="DangPai" ColumnName="DangPai" />
+                <ScalarProperty Name="XueLi" ColumnName="XueLi" />
+                <ScalarProperty Name="JoinJob" ColumnName="JoinJob" />
+                <ScalarProperty Name="PhotoPath" ColumnName="PhotoPath" />
+                <ScalarProperty Name="Remark9" ColumnName="Remark9" />
+                <ScalarProperty Name="Remark8" ColumnName="Remark8" />
+                <ScalarProperty Name="Remark7" ColumnName="Remark7" />
+                <ScalarProperty Name="Remark6" ColumnName="Remark6" />
+                <ScalarProperty Name="Remark5" ColumnName="Remark5" />
+                <ScalarProperty Name="Remark4" ColumnName="Remark4" />
+                <ScalarProperty Name="Remark3" ColumnName="Remark3" />
+                <ScalarProperty Name="Remark2" ColumnName="Remark2" />
+                <ScalarProperty Name="Remark1" ColumnName="Remark1" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Desc1" ColumnName="Desc1" />
+                <ScalarProperty Name="Desc0" ColumnName="Desc0" />
+                <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+                <ScalarProperty Name="CataLogId" ColumnName="CataLogId" />
+                <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
+                <ScalarProperty Name="PwdAnswer" ColumnName="PwdAnswer" />
+                <ScalarProperty Name="PwdQuestion" ColumnName="PwdQuestion" />
+                <ScalarProperty Name="EduLevel" ColumnName="EduLevel" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="CellPhone" ColumnName="CellPhone" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="Card" ColumnName="Card" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="Available" ColumnName="Available" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="LoginName" ColumnName="LoginName" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

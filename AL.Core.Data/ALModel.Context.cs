@@ -26,5 +26,12 @@ namespace AL.Core.Data
         }
     
         public DbSet<TestTable> TestTables { get; set; }
+        public DbSet<CMSColumn> CMSColumns { get; set; }
+        public DbSet<CMSCourse> CMSCourses { get; set; }
+        public DbSet<CMSCourseWare> CMSCourseWares { get; set; }
+        public DbSet<CMSPublish> CMSPublishes { get; set; }
+        public DbSet<SysLoginLog> SysLoginLogs { get; set; }
+        public DbSet<SysOperationLog> SysOperationLogs { get; set; }
+        public DbSet<SysUser> SysUsers { get; set; }
     }
 }

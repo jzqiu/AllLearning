@@ -5,9 +5,15 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width" />
         @Styles.Render("~/Content/css")
-        @Styles.Render("~/Content/css/easyui")
+        <link rel="stylesheet" href="@Url.Content("~/Content/themes/gray/easyui.css")" />        
+        <link rel="stylesheet" href="@Url.Content("~/Content/themes/icon.css")" />
         @Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/easyui")
+        <script type="text/javascript" src="@Url.Content("~/Scripts/easyui/jquery.easyui.js")"></script>
+        <script type="text/javascript" src="@Url.Content("~/Scripts/easyui/easyui-lang-zh_CN.js")"></script>
+        <link rel="stylesheet" href="@Url.Content("~/Content/umeditor/themes/default/css/umeditor.css")" /> 
+        <script type="text/javascript" src="@Url.Content("~/Content/umeditor/umeditor.js")"></script>
+        <script type="text/javascript" src="@Url.Content("~/Content/umeditor/umeditor.config.js")"></script>
+        <script type="text/javascript" src="@Url.Content("~/Content/umeditor/lang/zh-cn/zh-cn.js")"></script>
         @RenderSection("head", required: false)
     </head>
     <body>

@@ -247,6 +247,7 @@
     <Content Include="Content\video.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <None Include="Properties\PublishProfiles\ALSite.pubxml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Images\index\bottom_bg.jpg" />
     <Content Include="Images\index\img.jpg" />

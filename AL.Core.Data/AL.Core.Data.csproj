@@ -65,7 +65,28 @@
       <DependentUpon>ALModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="ALUnitOfWorkContext.cs" />
+    <Compile Include="CMSColumn.cs">
+      <DependentUpon>ALModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CMSCourse.cs">
+      <DependentUpon>ALModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CMSCourseWare.cs">
+      <DependentUpon>ALModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CMSPublish.cs">
+      <DependentUpon>ALModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SysLoginLog.cs">
+      <DependentUpon>ALModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SysOperationLog.cs">
+      <DependentUpon>ALModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SysUser.cs">
+      <DependentUpon>ALModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="TestTable.cs">
       <DependentUpon>ALModel.tt</DependentUpon>
     </Compile>
