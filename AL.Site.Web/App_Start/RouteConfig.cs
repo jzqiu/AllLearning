@@ -57,6 +57,10 @@ namespace AL.Site.Web
                 "contact",
                 "contact.html",
                 new { controller = "Home", action = "Contact", id = UrlParameter.Optional });
+            routes.MapRoute(
+                "GetValidateCode",
+                "GetValidateCode.html",
+                new { controller = "Account", action = "GetValidateCode", id = UrlParameter.Optional });
 
             routes.MapRoute(
                 name: "Default",
