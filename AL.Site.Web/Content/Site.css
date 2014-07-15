@@ -182,11 +182,11 @@ a:hover { color: black; text-decoration: underline; }
 
 .login_box p { height: 30px; line-height: 30px; padding-left: 5px; }
 
-.user_name, .user_pwd, .check_input { width: 185px; height: 17px; line-height: 17px; margin-left: 10px; border: solid 1px #d6d6d6; }
+.user_name, .user_pwd, .check_input { width: 185px; height: 24px; line-height: 24px; margin-left: 10px; border: solid 1px #d6d6d6; }
 
 .check_input { width: 60px; }
 
-.check_img_box { display: inline-block; width: 80px; height: 19px; background-color: gray; margin-left: 10px; position: relative; top: 5px; }
+.check_img_box { display: inline-block; position: relative; top: 8px; }
 
 .login_btn { width: 60px; height: 90px; line-height: 90px; text-align: center; color: white; font-size: 16px; font-weight: bold; position: absolute; bottom: 15px; right: 15px; cursor: pointer; background: url('../Images/login/btn.jpg'); }
 
